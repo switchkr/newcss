@@ -1,0 +1,1543 @@
+@import url(https://envyxyz.github.io/removal/removal.css);
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@600&display=swap');
+
+/* Global - Variables */
+
+:root{
+    --accent: #9557f1;
+    --btn-bg: #1f1f1fbd;
+    --bg: #7a7a7a8f;
+    --premium: gold;
+    --verified: #2196f3;
+    --text: #f1efef;
+    --text-2: #000;
+    --ingame-bg: rgba(0,0,0,0.4);
+}
+
+@font-face {
+    font-family: material-icons;
+    src: url(https://fonts.gstatic.com/s/materialicons/v99/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
+}
+
+a[href],
+a[style*="right"],
+a[onclick],
+a {
+	color: var(--accent)
+}
+
+*{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+/* removal */
+
+#mainLogo,
+#teamSelector,
+#weapDisplay{
+    display: none!important
+}
+
+/* Menu Item Container */
+
+:root{
+    --profile: var(--accent);
+    --shop: var(--accent);
+    --chall: var(--accent);
+    --hub: var(--accent);
+    --games: var(--accent);
+    --mods: var(--accent);
+    --settings: var(--accent);
+}
+
+#menuItemContainer{
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: all;
+}
+
+#menuItemContainer::before{
+    content: '';
+    position: fixed;
+    width: 900PX;
+    height: 200px;
+    top: -50px;
+    left: 50%;
+    background: transparent;
+    transform: translateX(-50%);
+    pointer-events: all;
+    z-index: -1
+}
+
+.material-icons{
+	color: var(--icon)!important
+}
+
+.menuItem{
+    margin: 0 25px;
+    background: var(--btn-bg);
+    border: 5px solid;
+    height: 100px;
+    width: 100px;
+    border-radius: 150%;
+    transform: translateY(-150px);
+    opacity: 0;
+}
+
+.menuItem:nth-child(1),
+.menuItem:nth-child(4){
+	display: none
+}
+
+.menuItemTitle{
+    font-size: 0!important;
+}
+
+.menBtnIcn{
+    margin: 18px
+}
+
+.menuItem[onClick*="showWindow(5)"],
+.menuItem[onClick*="showWindow(5)"]>.menBtnIcn{
+    color: var(--profile) !important;
+    transition: transform 350ms ease-in-out 10ms, color 320ms, opacity 350ms ease-in-out 10ms 
+}
+
+.menuItem[onClick*="showWindow(14)"],
+.menuItem[onClick*="showWindow(14)"]>.menBtnIcn{
+    color: var(--shop) !important;
+    transition: transform 350ms ease-in-out 90ms, color 320ms ease-in-out, opacity 350ms ease-in-out 90ms
+}
+
+.menuItem[onClick*="windows[32]"],
+.menuItem[onClick*="windows[32]"]>.menBtnIcn{
+   color: var(--chall) !important;
+   transition: transform 350ms ease-in-out 170ms, color 320ms ease-in-out, opacity 350ms ease-in-out 170ms
+}
+
+.menuItem[onClick*="window.open('/social.html', '_blank')"],
+.menuItem[onClick*="window.open('/social.html', '_blank')"]>.menBtnIcn{
+    color: var(--hub) !important;
+    transition: transform 350ms ease-in-out 250ms, color 320ms ease-in-out, opacity 350ms ease-in-out 250ms
+}
+
+.menuItem[onClick*="showGames()"],
+.menuItem[onClick*="showGames()"]>.menBtnIcn{
+    color: var(--games) !important;
+    transition: transform 350ms ease-in-out 330ms, color 320ms ease-in-out, opacity 350ms ease-in-out 330ms
+}
+
+.menuItem[onClick*="showWindow(4)"],
+.menuItem[onClick*="showWindow(4)"]>.menBtnIcn{
+    color: var(--mods) !important;
+    transition: transform 350ms ease-in-out 410ms, color 320ms ease-in-out, opacity 350ms ease-in-out 410ms
+}
+
+.menuItem[onClick*="showWindow(1)"],
+.menuItem[onClick*="showWindow(1)"]>.menBtnIcn{
+    color: var(--settings) !important;
+    transition: transform 350ms ease-in-out 490ms, color 320ms ease-in-out, opacity 350ms ease-in-out 490ms 
+}
+
+.menBtnIcn,
+#menuItemContainer{
+    transition-duration: 350ms
+}
+
+#menuItemContainer:hover > .menuItem{
+    transform: translateY(0);
+    opacity: 1
+}
+
+.menuItem:hover{
+    transform: scale(0.9);
+    color: #fff !important
+}
+
+.menuItem:hover .menBtnIcn{
+    transform: scale(0.9);
+    color: #fff !important
+}
+
+/* menu class container */
+
+#menuClassNameTag{
+	display: none;
+}
+
+#menuClassContainer {
+    transform: unset;
+    position: fixed;
+    left: 0;
+    align-items: baseline; 
+}
+
+#policeButton{
+    display: none
+}
+
+#selectorContainer {
+    width:-webkit-fill-available;
+    background-color: transparent;
+    display:flex;
+    position: relative;
+    align-items:center;
+    height:180px;
+    margin-bottom:20px;
+}
+
+.classCard{
+	background: var(--bg);
+	width: 370px
+}
+
+.classXPBar{
+	width: 365px
+}
+
+.clsXPBarC{
+	background-color: var(--accent)
+}
+
+.selectorItem {
+    left:0;
+    transform:translateX(5%);
+    margin-right:20px;
+    width:200px;
+    transition-duration: 320ms;
+    background-color: var(--btn-bg)
+}
+
+.premiumSkinCol{
+	color: var(--accent)!important
+}
+
+.skinColorItem{
+	transition-duration: 320ms
+}
+
+.selectorItem:hover{
+	background-color: var(--accent)
+}
+
+#customizeContainer {
+    float:left;
+    width:100%;
+}
+
+#customizeButton{
+	position: fixed;
+	bottom: 45px;
+	left: calc(25% - 148px);
+	background: var(--btn-bg);
+    border: 5px solid var(--accent) !important;
+    padding: 0;
+    height: 100px;
+    width: 100px;
+    border-radius: 150%;
+    box-shadow: 0 0 black!important;
+    font-size: 0!important;
+    transition-duration: 350ms
+}
+
+#customizeButton .material-icons{
+	text-shadow: 0 0 black
+}
+
+#customizeButton:hover{
+	transform: unset;
+	border-color: #fff!important
+}
+
+#customizeButton:hover > .material-icons{
+    transform: scale(0.85) translateX(58%);
+    color: #fff !important
+}
+
+#customizeButton .material-icons{
+    position: absolute;
+    top: 50%;
+    right: 58%;
+    margin: 0;
+    transform: translateX(50%);
+    line-height: 20px;
+    font-size: 50px !important;
+    color: var(--accent) !important;
+    transition-duration: 350ms
+}
+
+#classPreviewCanvas{
+	opacity: 0;
+	left: -160PX;
+	position: fixed;
+	bottom: 100px;
+    transition-duration: 350ms;
+    transition-delay: -50ms;
+}
+
+#menuClassName,
+#menuClassSubtext{
+	position: fixed;
+	bottom: 0;
+	left: -30px;
+	width: 350px;
+	text-align: center;
+	transition-duration: 350ms;
+    transform: translateY(-100px)
+}
+
+#menuClassSubtext{
+	transform: translateY(-70px)
+}
+
+#menuClassContainer:hover>#classPreviewCanvas{
+	opacity: 1;
+	transition-delay: 150ms;
+}
+
+#menuClassContainer:hover>#menuClassName,
+#menuClassContainer:hover>#menuClassSubtext{
+	transform: translateY(-10px);
+	opacity: 0;
+}
+
+#menuClassSubtext span[style="color:inherit"]{
+	display: none
+}
+
+.button.small,
+.shopCard,
+#spinRespin,
+.serverHostOp,
+.rnkShpBtn,
+.hostMapName,
+.optName,
+.classLvl,
+.classHP,
+#confirmBtn,
+#declineBtn,
+#specGameInfo,
+#specTimer,
+#menuClassSubtext,
+#menuClassName,
+.punishButton,
+.menBtnIcn{
+    text-shadow: 0px -1px 0px black,0px 1px 0px black,1px 0px 0px black,-1px 0px 0px black,1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,
+    -1px -1px 0px black!Important;
+}
+
+/* Sub Logo Buttons */
+
+#subLogoButtons{
+    background: transparent;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    height: max-content;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: all;
+}
+
+#subLogoButtons::before{
+    content: '';
+    position: fixed;
+    width: 900PX;
+    height: 300px;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: all;
+    z-index: -1
+}
+
+#subLogoButtons > .button{
+    margin: 0 25px;
+    background: var(--btn-bg);
+    padding: 0 !important;
+    color: var(--accent);
+    border: 5px solid!important;
+    height: 100px;
+    width: 100px;
+    border-radius: 150%;
+    transform: translateY(190px);
+    opacity: 0;
+    font-size: 0!important;
+    transition-duration: 350ms
+}
+
+#subLogoButtons:hover > .button{
+	transform: translateY(0);
+	opacity: 1;
+}
+
+#subLogoButtons > .button:after:hover{
+	color: #fff!important;
+}
+
+#subLogoButtons>.button::after{
+    font-size: 50px;
+    line-height: 100PX;
+    font-family: 'Material Icons Outlined';
+    transition: font-size 350ms ease-in-out
+}
+
+#menuBtnHost::after {
+    content: 'add';
+}
+
+#menuBtnBrowser::after {
+    content: 'search';
+}
+
+#menuBtnRanked::after {
+    content: 'emoji_events';
+}
+
+#inviteButton::after {
+    content: 'share';
+}
+
+#menuBtnJoin::after {
+    content: 'link';
+}
+
+#subLogoButtons > .button:nth-child(2){
+    transition: transform 350ms ease-in-out 90ms, color 320ms ease-in-out, opacity 350ms ease-in-out 90ms!important
+}
+
+#subLogoButtons > .button:nth-child(3){
+   transition: transform 350ms ease-in-out 170ms, color 320ms ease-in-out, opacity 350ms ease-in-out 170ms
+}
+
+#subLogoButtons > .button:nth-child(4){
+    transition: transform 350ms ease-in-out 250ms, color 320ms ease-in-out, opacity 350ms ease-in-out 250ms
+}
+
+#subLogoButtons > .button:nth-child(5){
+    transition: transform 350ms ease-in-out 330ms, color 320ms ease-in-out, opacity 350ms ease-in-out 330ms
+}
+
+#subLogoButtons > .button:nth-child(6){
+    transition: transform 350ms ease-in-out 410ms, color 320ms ease-in-out, opacity 350ms ease-in-out 410ms
+}
+
+/* terms info changelog */
+
+#termsInfo div:not([onClick="showWindow(35)"]){
+	display: none!important
+}
+
+#termsInfo{
+	background: transparent;
+    position: fixed;
+	bottom: 50px;
+	right: calc(25% - 150px);
+	background: var(--btn-bg);
+    border: 5px solid var(--accent) !important;
+    padding: 0;
+    height: 100px;
+    width: 100px;
+    border-radius: 150%;
+    box-shadow: 0 0 black!important;
+    font-size: 0!important;
+    transition-duration: 350ms
+}
+
+#termsInfo:hover{
+	transform: unset;
+	border-color: #fff!important
+}
+
+#termsInfo div[onClick="showWindow(35)"]{
+	font-size: 0;
+}
+
+#termsInfo div[onClick="showWindow(35)"]::before{
+	content: 'info';
+	position: absolute;
+	font-size: 45px;
+    font-family: Material Icons;
+    color: var(--accent);
+    height: 100px;
+    width: 100px;
+    top: 0;
+    text-align: center;
+    line-height: 100px;
+    transition-duration: 350ms
+}
+
+#termsInfo:hover>.terms::before{
+	color: #fff !important;
+    transform: scale(0.9)	
+}
+
+/* UI */
+
+/* spect */
+
+#uiBase.onMenu #spectButton{
+	position: fixed;
+	top: 50px;
+	left: calc(25% - 150px);
+	transform: unset!important;
+}
+
+#spectButton span[style*="color:rgba(255,255,255,0.6)"]{
+	display: none
+}
+
+#spectButton span.sliderSml{
+    width: 100px;
+    height: 100px;
+    border-radius: 150%!important;
+    background: var(--btn-bg);
+    color: var(--accent);
+}
+
+#spectButton span.sliderSml::before{
+	content: 'visibility';
+	font-family: 'material-icons'!important;
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	margin: 0!important;
+	transform: unset;
+	line-height: 100px;
+	text-align: center;
+	width: 99%;
+	height: 99%;
+	background: transparent;
+	font-size: 45px!important;
+	color: var(--accent);
+	border: 5px solid;
+	transition-duration: 350ms
+}
+
+input:checked+.sliderSml::before{
+	content: 'visibility_off'!important;
+	color: #fff !important
+}
+
+/* HEADERS */
+
+.headerBarLeft{
+    background: transparent;
+    position: fixed;
+    left: calc(50% - 94.5px);
+    top: calc(50% - 83px);
+    border-radius: 0;
+}
+
+#menuUsernameContainer:hover > #menuAccountUsername{
+	opacity: 1
+}
+
+#menuAccountUsername{
+    position: fixed;
+    width: 152px;
+    height: 152px;
+    background: var(--btn-bg);
+    font-size: auto;
+    border-radius: 150%;
+    line-height: 150px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition-duration: 350ms;
+    opacity: 0;
+}
+
+#menuMiniProfilePic{
+	width: 150px!important;
+	height: 150px!important;
+	border-radius: 150%;
+	border: 8px solid var(--accent)
+}
+
+#signedInHeaderBar{
+	border-radius: 0!important
+}
+
+#mLevelCont,
+.progressBar,
+.krInfo,
+#menuJNKCount,
+.verticalSeparator,
+#instructions{
+	display: none
+}
+
+#mailContainer{
+	transform: unset!important;
+	position: fixed;
+    background: transparent;
+    position: fixed;
+	top: 50px;
+	right: calc(25% - 165px);
+	background: var(--btn-bg);
+    border: 5px solid var(--accent) !important;
+    padding: 0;
+    height: 100px;
+    width: 100px;
+    border-radius: 150%;
+    box-shadow: 0 0 black!important;
+    font-size: 0!important;
+    transition-duration: 350ms;
+    will-change: unset;
+    padding: 0
+}
+
+#mailContainer:hover{
+    border-color: #fff!important
+}
+
+#mailIcon{
+	font-size: 0!important;
+	transform: unset!important;
+}
+
+#mailIcon::before{
+    content: 'inbox';
+	position: absolute;
+	font-size: 50px;
+    font-family: Material Icons;
+    color: var(--accent);
+    height: 100px;
+    width: 100px;
+    top: 0;
+    text-align: center;
+    line-height: 100px;
+    transition-duration: 350ms;
+}
+
+#mailIcon:hover:before{
+	color: #fff !important;
+    transform: unset!important;
+    font-size: 50px;
+    opacity: 1;
+}
+
+#instructionHolder{
+	backdrop-filter: blur(5px)
+}
+
+/* right header bar */
+
+.headerBarRight{
+	background: transparent;
+}
+
+.menuDebugInfo{
+	display: flex;
+	flex-direction: column-reverse
+}
+
+#menuFPSDisplay,
+#menuPingIcon{
+	font-size: 0!important
+}
+
+#menuFPS{
+	color: var(--accent)!Important;
+	font-size: 22px
+}
+
+#menuPingText{
+	color: var(--text)!Important;
+	font-size: 22px
+}
+
+/* in game */
+
+.debugInfo,
+#curGameInfo{
+    display: none!important
+}
+
+/* Ammo */
+
+#ammoDisplay{
+	position: fixed;
+	left: 125px;
+	width: 320PX;
+	height: 20px;
+	border: 4px solid #fff;
+	border-top: hidden;
+	border-radius: 0 0 150px 0;
+	background-color: var(--ingame-bg);
+	background-image: linear-gradient(var(--accent),var(--accent));
+	top: 80px;
+	padding: 0!important;
+	transform: unset!important;
+}
+
+#ammoMax{
+	display: none
+}
+
+#ammoVal{
+	position: fixed;
+	top: 105px;
+	left: 150PX;
+    text-align: right;
+	font-size: 17px
+}
+
+#ammoVal::before{
+	content: 'PP : ';
+	margin-right: 15px;
+	text-align: left;
+}
+
+#ammoDisplay[style*="background-size: 0%"]{
+	background-size: 100%!important
+}
+
+/* :Helth: */
+
+#healthValueHolder,
+#ammoIcon{
+	display: none;
+}
+
+#healthBar,
+#hudClassIcon{
+	position: fixed;
+	top: 1%;
+}
+
+#hudClassIcon{
+	border: 5px inset var(--accent)
+}
+
+#hudClassIcon,
+#hudClassImg{
+	border-radius: 150%!important;
+	background-color: #3a3939;
+	width: 120px;
+	height: 120px
+}
+
+#healthBar {
+    left: 120px;
+    top: 50PX;
+    display: inline-flex;
+    width: 360px;
+    height: 26px;
+    bottom: 36px;
+    border-radius: 0 150px 150px 0!important;
+    z-index: -1 ;
+    background-color: var(--ingame-bg);
+    border: 4px solid var(--accent);
+}
+
+.healthBarSeg:last-child,
+.healthBarSeg:last-child .hpBSeg{
+	border-radius: 0 150px 150px 0
+}
+
+.healthBarSeg {
+    margin: 0px -1px;
+    border-radius: 0;
+    background-color: transparent;
+    width: -webkit-fill-available;
+    transition-duration: 320ms
+}
+
+.hpBSeg {
+    border-radius: 0;
+    box-shadow: none;
+    transition-duration: 320ms
+}
+
+
+/* TIMER */
+
+#timerDisplay{
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 4px ridge var(--accent);
+	top: 3.15%;
+	padding: 0px!important;
+	height: 50PX;
+	width: 150px;
+	text-align: center;
+	background: var(--ingame-bg);
+	vertical-align: middle;
+}
+
+/* #timerDisplay::before{
+    content: '';
+    position: absolute;
+    top: -1PX;
+    left: 0;
+    width: 93%;
+    height: 103%;
+    border-left: 5px solid var(--accent);
+    border-right: 5px solid var(--accent);
+    border-image: linear-gradient(180deg, var(--accent) 25%, transparent 0%, transparent 75%, var(--accent) 70%);
+    border-image-slice: 1;
+} */
+
+#gameMessage{
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 150px;
+}
+
+#timerIcon{
+	float: right;
+	display: none
+}
+
+/* leader display */
+
+#topRight{
+	transform: unset;
+}
+
+.topRightCounters{
+    position: fixed;
+    left: 140PX;
+    transform: unset;
+    right: unset;
+    width: max-content
+}
+
+.topRightCounters div{
+	border-radius: 0;
+	color: #fff;
+	background: transparent;
+}
+
+.countIcon{
+	float: left
+}
+
+.topRightCounters div span{
+	color: var(--text-color)!important
+}
+
+#deathsVal::before {
+    content: 'D: ';
+}
+
+#killsVal::before {
+    content: 'K: ';
+}
+
+#streakVal::before {
+    content: 'S: ';
+}
+
+#myScoreVal::before {
+    content: 'P: ';
+}
+
+#livesDisp::before {
+    content: 'L: ';
+}
+
+#kdVal::before {
+    content: 'KD: ';	
+}
+
+.topRightCounters img,
+.topRightCounters .material-icons{
+	display: none!important
+} 
+
+/* teamscores */
+
+#teamScores {
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    padding: 10px;
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.tScore {
+    display: inline-block;
+}
+
+#tScoreV1 {
+    position: fixed;
+    left: -25%;
+    top: 2px;
+}
+
+#tScoreV2 {
+    position: fixed;
+    left: 25%;
+    top: 2px;
+}
+
+.tScoreT {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    z-index: 2;
+}
+
+.tScoreM {
+    display: none;
+}
+
+.tScoreF {
+    left: 50%;
+    width: 75px;
+    height: 25px;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #eb5656;
+    color: transparent;
+    opacity: 50%;
+    z-index: 1;
+}
+
+.tScoreF.you {
+    background-color: #5699eb;
+    color: transparent;
+    opacity: 50%;
+    z-index: 1;
+}
+
+.tScoreC {
+    left: 50%;
+    width: 75px;
+    height: 25px;
+    margin-right: 0;
+    background-color: var(--accent);
+    opacity: 50%;
+    z-index: 1;
+}
+
+.tScoreC.you {
+    background-color: var(--ingame-bg);
+    opacity: 50%;
+    z-index: 1;
+}
+
+/* leader display */
+
+#leaderDisplay{
+	position: fixed;
+	top: 1%;
+	right: 1%;
+	border-radius: 0;
+	background: var(--ingame-bg);
+	border: 2px solid var(--accent)
+}
+
+.leaderItem:nth-child(1) .leaderCounter {
+	font-size: 0;
+}
+
+.leaderScore,
+.leaderCounter {
+	color: var(--text)
+}
+
+.leaderItem:nth-child(1) .leaderCounter::before {
+	content: 'emoji_events';
+	color: var(--icon);
+	font-size: 25px;
+	line-height: 26px;
+	font-family: 'Material Icons Outlined'
+}
+
+.leaderNameM,
+.newLeaderNameM
+/* Your own color */
+
+{
+	color: var(--accent)
+}
+
+.leaderNameF,
+.newLeaderNameF
+/* teammate color */
+
+{
+	color: var(--text);
+	opacity: 0.8;
+	text-shadow: 0px -1.6px 0px var(--text-2), 0px 1.6px 0px var(--text-2), 2px 0px 0px var(--text-2), -2px 0px 0px var(--text-2), 1.6px 2px 0px var(--text-2), -1.6px 2px 0px var(--text-2), 1.6px -2px 0px var(--text-2), -1.6px -2px 0px var(--text-2)!Important;
+}
+
+.leaderName,
+.newLeaderName {
+	color: #e44141;
+	text-shadow: 0px -1.6px 0px var(--text-2), 0px 1.6px 0px var(--text-2), 2px 0px 0px var(--text-2), -2px 0px 0px var(--text-2), 1.6px 2px 0px var(--text-2), -1.6px 2px 0px var(--text-2), 1.6px -2px 0px var(--text-2), -1.6px -2px 0px var(--text-2)!Important;
+}
+
+
+/* Chat */
+
+#uiBase.onMenu #chatHolder{
+    left: 0;
+    bottom: 50%;
+    transform: translateY(50%) translateX(-500px);
+    transition-duration: 320ms
+}
+
+#uiBase.onMenu #chatHolder:focus-within{
+    transform: translateY(50%) translateX(0px);
+}
+
+#chatList[style*="max-height"]{
+    max-height: 450px!important;
+    border-radius: 0!important
+}
+
+.chatMsg[style*="#fc03ec"]{
+    /* magenta system msg */
+    color: var(--accent)!important;
+}
+
+.chatMsg [style*="#9eeb56"]{
+    /* lightgreen player highlight */
+    color: var(--accent)!important; 
+}
+
+.chatItem{
+    background: transparent!important
+}
+
+.weaponChatIcon {
+    filter: brightness(0) drop-shadow(-2px 0px 1px var(--accent))  drop-shadow(2px 0px 1px var(--accent));
+}
+
+/* input */
+
+#chatSwitch{
+    display: none!Important
+}
+
+#chatInputHolder{
+    margin: 0;
+    border-radius: 0!important;
+    padding-left: 0!important;
+    opacity: 0;
+    height: 0;
+    transition-duration: 320ms;
+    transition-delay: 150ms
+}
+
+#chatInputHolder:focus-within{
+    opacity: 1;
+    height: 45px;
+    transition-delay: 0ms
+}
+
+#chatInput{	
+    margin-top: 2px!Important;	
+    background: transparent;	
+    border: hidden;	
+    border-radius: 0px;	
+    opacity: 0;	
+    margin-left: -50px!important;	
+    transition-duration: 320ms	
+}
+
+#chatInputHolder:focus-within>#chatInput{
+    opacity: 1;
+    transition-delay: 150ms
+}
+
+/* Trade Chat */
+
+#tradeChatHolder{
+	z-index: 99999999;
+	right: unset;
+	left: 165px;
+	width: 320px!important
+}
+
+#tradeChatList{
+	direction: rtl;
+    overflow-y: auto;
+    padding-left: 10px;
+    background-color: #00000094;
+}
+
+.estOfferVal [style="color: rgba(0,0,0,0.7);"]{
+	color: var(--accent)!important
+}
+
+.tListN:not([style="background-color: rgb(92, 224, 90);"]){
+	background-color: var(--accent)!important
+}
+
+.tradeChatItem{
+	font-size: 18px;
+	background-color: transparent!Important
+}
+
+#tradeChatInput{
+	margin-top: 5px
+}
+
+/* logged out */
+
+.headerBarLeft {
+	transform: unset
+}
+
+.headerBarLeft:hover::before {
+	transform: scale(0.9);
+}
+
+.button.lgn {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: var(--btn-bg);
+	border: 4px solid var(--accent)!important;
+	height: 100px!important;
+	max-width: 100px!important;
+	padding: 0!important;
+	border-radius: 150%;
+	margin-top: -1px;
+	font-size: 0!important;
+}
+
+.button.lgn .material-icons {
+	color: var(--accent)!important;
+	font-size: 55px!important;
+	transition-duration: 350ms;
+	line-height: 105px;
+}
+
+.headerBarLeft:hover>.button.lgn>.material-icons {
+	transform: scale(0.9);
+	opacity: 1
+}
+
+/* WIND */
+
+#menuWindow *{
+	border: hidden
+}
+
+#menuWindow.dark,
+.settingsHeader{
+	background: transparent;
+	box-shadow: 0 0 black;;
+}
+
+#activateKDM,
+.accountButton,
+.loadoutBtn,
+.settingsBtn,
+.subPassChg,
+.lnkTw,
+.creatorCodeBtn,
+.redVouchBtn,
+#hostMenuBtn,
+.hostCBtn,
+.advancedToggle[style*=background-color],
+.updDisN,
+.searchBtn,
+.quickJoin,
+.rnkShpBtn,
+.hostPresetBtn,
+.hostToggle,
+#declineBtn,
+.punishButton,
+.compSwpTmB,
+.joinBtn {
+	color: var(--text)!important;
+	background: var(--accent) !Important;
+	transition-duration: 350ms !important;
+	border-radius: 4px;
+}
+
+#activateKDM {
+	box-shadow: inset 0 -7px 0 0 #000 !important;
+}
+
+.accountButton:hover,
+.loadoutBtn:hover,
+.settingsBtn:hover,
+.subPassChg:hover,
+.lnkTw:hover,
+.creatorCodeBtn:hover,
+.redVouchBtn:hover,
+#hostMenuBtn:hover,
+.hostCBtn:hover,
+.updDisN:hover,
+.searchBtn:hover,
+.quickJoin:hover,
+.rnkShpBtn:hover,
+.hostPresetBtn:hover,
+.hostToggle:hover,
+#declineBtn:hover,
+.punishButton:hover,
+.compSwpTmB:hover,
+.joinBtn:hover {
+	background-color: var(--essential)!important;
+	color: var(--accent)!important;
+}
+
+.sliderVal {
+	margin-top: -2px!important;
+	border: hidden!Important;
+	border-radius: 0
+}
+
+.sliderM {
+	border-radius: 4px;
+	height: 5px;
+	background-color: var(--bg)!important;
+	margin-top: 8px!important
+}
+
+.sliderM::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 0px;
+	transform: rotate(45deg);
+	background: var(--accent);
+	cursor: pointer
+}
+
+input {
+	height: 25px;
+	background-color: var(--essential)!important;
+	color: var(--text)!important;
+	transition-duration: 350ms
+}
+
+input::placeholder {
+	color: var(--text)!important
+}
+
+select {
+	height: 25px;
+	background-color: transparent!important;
+	color: var(--text-2)!important;
+	padding: 0!Important;
+	transition-duration: 350ms;
+	border: hidden!important
+}
+
+select::-webkit-scrollbar{
+	display: none
+}
+
+option {
+	background-color: var(--btn-bg)!important;
+	color: var(--text)!important
+}
+
+select:focus-within {
+	transform: scale(1.1)
+}
+
+
+#windowHolder {
+    display:inline-block !important;
+    opacity:0;
+    transform:translateY(-100%);
+    transition:transform 0.7s,opacity 0.7s;
+    backdrop-filter:blur(4px);
+}
+
+#windowHolder[style*="block"] {
+    opacity:1;
+    transform:translateY(0);
+    transition:transform 0.7s,opacity 0.7s;
+}
+
+#windowCloser {
+    pointer-events:none;
+}
+
+#uiBase.onEndScrn #windowHolder {
+    display:none !important;
+}
+
+#menuWindow {
+    background-color:transparent !important;
+    box-shadow:none !important;
+}
+
+#windowHeader {
+    display:inline-block;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%) skewX(-15deg);
+    top: 50px;
+    color:var(--accent);
+    font-size:40px;
+    text-shadow: 0px -2px 0px white,0px 2px 0px white,2px 0px 0px white,-2px 0px 0px white,2px 2px 0px white,-2px 2px 0px white,2px -2px 0px white,
+    -2px -2px 0px white!Important;
+}
+
+#mapInfoHolder{
+    z-index: 9
+}
+
+.mailFrom{
+	color: var(--accent)!important
+}
+
+/*Universal Scroll Bar */
+
+*::-webkit-scrollbar {
+    width: 4px!important;
+}
+
+*::-webkit-scrollbar-track{
+	background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 0px!important;
+}
+
+.setHed{
+	background-color: transparent!important;
+}
+
+.settingsHeader{
+	position: relative
+}
+
+.setSugBox2{
+	display: none
+}
+
+/* slider */
+
+.switch {
+	width: 48px;
+	height: 48px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.slider2 {
+	margin-top: -15px
+}
+
+#hostMenuBtn {
+	background-color: transparent;
+}
+
+
+/* I dont know why I did this but IT IS WHAT IT IS HAHAHAH */
+
+#hostMenuBtn:nth-last-child(1) span.material-icons[style="color:#fff;font-size:40px;margin-bottom:-1px;"]:hover {
+	color: var(--accent)!important
+}
+
+.slider,
+.slider2 {
+	background-color: transparent;
+}
+
+input:checked+.slider,
+input:checked+.slider2 {
+	background-color: transparent;
+}
+
+input:checked+.slider::before,
+input:checked+.slider2::before {
+	background-color: transparent;
+	transform: unset;
+	content: "check_mark";
+	left: 5px;
+	color: var(--accent);
+}
+
+.slider::before,
+.slider2::before {
+	background-color: transparent;
+	transform: unset;
+	left: 5px;
+	bottom: unset;
+    top: -2.5px;
+	line-height: 48px;
+	color: var(--accent-2);
+	font-family: material icons;
+	content: "close";
+	font-size: 32px;
+	transition-duration: 0.25s;
+	text-align: center;
+}
+
+option {
+	background-color: var(--accent-2);
+}
+
+input[type=color] {
+	border-width: 0;
+	height: 32px;
+	width: 32px;
+	margin-top: 8px;
+	margin-right: 16px;
+}
+
+.weaponChatIcon {
+    filter: brightness(0) drop-shadow(-2px 0px 1px var(--accent))  drop-shadow(2px 0px 1px var(--accent));
+}
+
+.endCard {
+    backdrop-filter:blur(8px);
+}
+
+#tabHolder,#matchVoteHolder,#endTable {
+    background-color:transparent;
+}
+
+.tabHeader.selected {
+    color:#fff;
+    border-bottom:none;
+}
+
+.tabHeader {
+    color:var(--accent);
+}
+
+.tabHeader:hover {
+    color:#fff;
+    border-bottom:none;
+}
+
+#endTable tbody tr th {
+    border-bottom:none;
+    font-size:0;
+    color:var(--accent);
+}
+
+#endTable tbody tr th:after {
+    font-size:20px;
+}
+
+#endlb_rank:after {
+    content: "R";
+}
+
+#endlb_name:after {
+    content:"N";
+}
+
+#endlb_score:after {
+    content:"S";
+}
+
+#endlb_kills:after {
+    content:"K";
+}
+
+#endlb_deaths:after {
+    content:"D";
+}
+
+#endlb_objective:after {
+    content:"O";
+}
+
+#endlb_dmg:after {
+    content:"Dmg";
+}
+
+#endlb_reward:after {
+    content:"Rew";
+}
+
+.teamTotals {
+    background-color:black;
+}
+
+.crStat,#kdLayout,.gfSection,.endSection {
+    background-color:transparent;
+    border:none;
+}
+
+.tabBody [style="text-align:center;color:#fff;font-size:30px;background-color:rgba(0, 0, 0, 0.4);border-radius:6px;padding:20px;"],.tabBody [style*="text-align:center;color:#fff;font-size:30px;background-color:rgba(0, 0, 0, 0.4);"],.reportBut,.xpLvl,.modeStatus,.fundsVal,.crLabel,.crVal,.teamTotalN0,.teamTotalN1,.teamWin0,.teamWin1,.teamTotalScore,.matchVoteMap,.matchVoteMode,.matchVoteTotal,.endTitle,#endTimer,#endTable td,#endTable td span,.endTableN[style="color:rgba(255,255,255,0.6)"],.endTableN[style="color:#eb5656"] {
+    background-color:transparent !important;
+    color:var(--accent) !important;
+}
+
+.xpEndBar {
+    background-color:transparent;
+}
+
+.xpEndBarB,
+.openCollection {
+    background-color: var(--accent)!important
+}
+
+.progressBarInner,
+.xpBarB,
+.chalXPBarC {
+	height: 100%;
+	background-image: linear-gradient(to right, var(--accent), var(--accent), 94%, white);
+}
+
+.vHR{
+    border-color: var(--accent)!important
+}
+
+li{
+	color: var(--text)!important
+}
+
+i[style*="color:#FBC02D"] {
+	font-size: 0!important;
+}
+
+i[style*="color:#FBC02D"]::before {
+	content: 'check';
+	font-size: 20px;
+}
+
+i[style*="color:#40C4FF"] {
+	font-size: 0!important;
+}
+
+i[style*="color:#40C4FF"]::before {
+	content: 'check';
+	font-size: 20px;
+}
+
+.lockedClass{
+	width: 66%
+}
+
+#matchVoteHolder{
+	width: max-content
+}
