@@ -1,0 +1,706 @@
+:root {
+    --accent:lightpink;
+    --background:#1b1b1b;
+}
+
+/* Font */
+
+@font-face {
+    font-family:gamefont;
+    src:url(https://dl.dropboxusercontent.com/s/xw5x81ketxikskx/font2.ttf?dl=0);
+}
+
+/* Font */
+
+/* Deletes */
+
+#streamContainer,.youNewDiv,#mainLogo,#seasonLabel,.headerBarRight,#newsHolder,#aHider,#infoHider,seasonLabel,#uiBase.onMenu #instructions {
+    display:none !important;
+}
+
+/* Deletes */
+
+/* KeyFrames */
+
+@keyframes rotate {
+    from {
+        transform:rotate(0deg)
+    }
+
+    to {
+        transform:rotate(360deg)
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform:scale(1)
+    }
+
+    50% {
+        transform:scale(1.3)
+    }
+
+    100% {
+        transform:scale(1)
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    } 
+} 
+
+@keyframes fadeIn {
+	0% {
+    	opacity:0;
+    }
+    50% {
+    	opacity:1;
+    }
+    100% {
+    	opacity:0;
+    }
+} 
+
+/* KeyFrames */
+
+/* MenuItemContainer */
+
+.menBtnIcn {
+    display:none !important;
+}
+
+#menuItemContainer {
+	width:240px !important;
+    background-color:var(--background);
+}
+
+#menuBtnProfile,#menuBtnShop {
+    font-size:0 !important;
+}
+
+#menuBtnProfile:before,#menuBtnShop:before,.menuItemTitle {
+    font-size:25px !important;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#menuBtnProfile:before {
+    content:'Profile';
+}
+
+#menuBtnShop:before {
+    content:'Shop';
+}
+
+.menuItemTitle:after {
+    font-size:25px;
+    color:var(--accent);
+    width:max-content;
+}
+
+#menuBtnProfile:after {
+	content:'プロフィール';
+}
+
+#menuBtnShop:after {
+	content:'マーケット';
+}
+
+#menuBtnChall:after {
+	content:'チャレンジ';
+}
+
+#menuBtnSocial:after {
+	content:'ソーシャル';
+}
+
+#menuBtnMaps:after {
+	content:'ゲーム';
+}
+
+#menuBtnMods:after {
+	content:'モッド';
+}
+
+#menuBtnSettings:after {
+	content:'設定';
+}
+
+#menuBtnClient:after {
+	content:'クライアント';
+}
+
+#menuBtnExit::after {
+    content:'エグジット';
+}
+
+/* MenuItemContainer */
+
+/* SubLogoButtons */
+
+#faceItIconM,#rankedSoonTm,.headerBarRight,#infoHider,#newsHolder,#aHider {
+    display:none !important;
+}
+
+#subLogoButtons {
+    display:inline-flex;
+    flex-direction:column;
+    height:100%;
+    width:275px;
+    transform:none;
+    left:unset;
+    bottom:unset;
+    right:0;
+    top:0;
+    background-color: var(--background);
+}
+
+#subLogoButtons .button {
+    height:-webkit-fill-available;
+    width:-webkit-fill-available;
+    border:none !important;
+    background-color:transparent;
+    padding:0 !important;
+    margin:0;
+    transform:none;
+    border-radius:0;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-size:25px !important;
+    transition:font-size 0.5s;
+}
+
+#subLogoButtons .button:after {
+    color:var(--accent);
+}
+
+#menuBtnHost:after {
+    content:'ホスト';
+}
+
+#menuBtnBrowser:after {
+    content:'サーバー';
+}
+
+#menuBtnRanked:after {
+    content:'ランクマッチ';
+}
+
+#inviteButton:after {
+    content:'参加';
+}
+
+#menuBtnJoin:after {
+    content:'招待';
+
+}
+
+/* SubLogoButtons */
+
+/* MenuClassContainer */
+
+#bubbleContainer,#policeButton img,#menuClassSubtext,#menuClassName,#customizeButton .material-icons {
+    display:none !important;
+}
+
+#menuClassContainer {
+    transform:none;
+    right:unset;
+    left:unset;
+    top:unset;
+    bottom:unset;
+}
+
+#menuClassContainer .button {
+    border:none !important;
+    background-color:transparent !important;
+    color:var(--accent);
+    transform:none !important;
+}
+
+#customizeButton {
+    font-size:0!important;
+    border-radius:0;
+    pointer-events:none;
+    background-color:transparent!important;
+    padding:0 !important;
+}
+
+#customizeButton:before {
+    content:"auto_fix_high";
+    font-family:Material-icons;
+    font-size:25px;
+    position:fixed;
+    left:50%;
+    top:20px;
+    transform:translateX(-50%);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:auto;
+    width:150px;
+    height:60px;
+    background-color:var(--background);
+    border:solid 5px var(--accent);
+    outline:solid 4px var(--background);
+    transition:color 0.3s;
+}
+
+#policeButton {
+    position:fixed;
+    left:calc(50% + 200px);
+    top:40px;
+    transform:translateX(-50%);
+}
+
+#policeButton:before {
+    content:"accessible_forward";
+    font-family:material icons;
+    font-size:60px;
+    color:var(--accent);
+    background-color:var(--background);
+    border:solid 5px var(--accent);
+    outline:solid 4px var(--background);
+    transition:color 0.3s;
+}
+
+#classPreviewCanvas {
+    position:fixed;
+    left:50%;
+    top:100px;
+    transform:translateX(-50%);
+    margin-bottom:0;
+    opacity:0;
+    transition:opacity 0.5s;
+}
+
+#customizeButton:hover:before,#policeButton:hover:before {
+    color:#fff;
+    transition:color 0.3s;
+}
+
+#menuClassContainer:hover #classPreviewCanvas {
+    opacity:0.4;
+    transition:opacity 0.5s;
+}
+
+/* MenuClassContainer */
+
+/* HeaderBarLeft */
+
+.progressBar,#mLevelCont {
+    display:none;
+}
+
+.headerBarLeft {
+    background-color:var(--background);
+}
+
+/* HeaderBarLeft */
+
+/* Spectate */
+
+#spectButton [style="font-size:15px;color:rgba(255,255,255,0.6)"] {
+    display:none;
+}
+
+#uiBase.onMenu #spectButton {
+    position:fixed;
+    left:calc(50% - 175px);
+    top:70px;
+    transform:translateX(-50%);
+}
+
+.sliderSml::before {
+    font-family:Material Icons;
+    content:"visibility_off";
+    font-size:40px;
+    color:var(--accent);
+    background-color:var(--background);
+    border:solid 4px var(--accent);
+    outline:solid 4px var(--background);
+    width:max-content;
+    height:fit-content;
+    padding:10px;
+    transition:color 0.3s;
+}
+
+input:checked+.sliderSml::before {
+    content:"visibility";
+    color:#fff;
+    transform:none;
+    transition:color 0.3s;
+}
+
+.sliderSml {
+    background-color:transparent !important;
+}
+
+/* Spectate */
+
+/* Health */
+
+#hudClassIcon,#challIcon,#maxHP {
+    display:none
+}
+
+#healthBar {
+    position:absolute;
+    display:inline-flex;
+    width:450px;
+    height:60px;
+    border-radius:0px;
+    background-color:rgba(0,0,0,0.4);
+	box-shadow:none; 
+	left:60px;
+	bottom:20px;
+    border:solid 5px var(--accent);
+    transform:skew(3.5deg);
+    outline:solid 3px var(--background);
+}
+
+.healthBarSeg {
+    margin:0px -1px;
+    border-radius:0;
+    background-color:var(--accent);
+    width:-webkit-fill-available;
+}
+
+.hpBSeg {
+    border-radius:0;
+    box-shadow:none;
+	background-color:var(--background) !important
+}
+
+#healthValueHolder {
+	position:fixed;
+	left:89px;
+    background-color:transparent;
+    bottom:45px;
+    z-index:998;
+}
+
+#healthValue {
+	font-size:50px;
+    color:var(--background);
+    z-index:999;
+    -webkit-text-stroke:3px var(--accent);
+    -webkit-text-fill-color:var(--background);
+    letter-spacing:3.5px;
+}
+
+#healthBar:before {
+    content:"ヘルスバー ";
+    position:absolute;
+    bottom:4.5px;
+    right:20px;
+    font-size:26px;
+    color:var(--accent);
+    letter-spacing:3px;
+    -webkit-text-stroke:1px var(--accent);
+}
+
+/* Health */
+
+/* Ammo */
+
+#ammoMax,#ammoIcon {
+    display:none;
+}
+
+#ammoDisplay {
+    position:absolute;
+	right:75px;
+	bottom:20px;
+    width:410px;
+    height:40px;
+	background-color:var(--background) !important;
+	background-image:linear-gradient(to right,var(--accent),var(--accent));
+	border-radius:0;
+	transform:skew(5deg);
+    border:solid 5px var(--accent);
+    outline:solid 4px var(--background);
+}
+
+#ammoDisplay:before {
+    content:"弾 丸 バ ー";
+    position:absolute;
+    bottom:2px;
+    left:20px;
+    color:var(--accent);
+    font-size:30px;
+}
+
+#ammoVal {
+    position:absolute;
+    bottom:0px;
+    right:20px;
+    font-size:50px;
+    color:var(--background);
+    -webkit-text-stroke:3px var(--accent);
+    -webkit-text-fill-color:var(--background);
+    letter-spacing:3.5px;
+}
+
+#reloadMsg {
+    border: none;
+    color:var(--accent);
+    font-family:Material-Icons;
+    font-size:0;
+    background-color: transparent;
+    position:fixed;
+    left:50%;
+    bottom:calc(50% - 300px);
+    transform:translateX(-50%);
+    height:60px;
+    width:60px;
+    padding:0;
+    line-height:60px;
+    border-radius: 100%;
+    animation:fadeIn 3s linear infinite;
+}
+
+#reloadMsg:before {
+    content:"warning";
+    font-size:45px;
+}
+
+/* Ammo */
+
+/* Weapon Icons */
+
+#weapDisplay {
+    display:none !important;
+}
+
+/* Weapon Icons */
+
+/* Chat */
+
+#chatSwitch,#voiceDisplay {
+    display:none;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+#chatList {
+    background-color:transparent;
+    border:none;
+}
+
+#chatInputHolder {
+    background-color:none;
+    border:none;
+    background-color:var(--background);
+    border:solid 5px var(--accent);
+    transform:skew(6deg);
+    outline:solid 4px var(--background);
+}
+
+#chatInput {
+    background-color:transparent;
+    border:none;
+}
+
+#chatInput {
+    margin-left:0;
+}
+
+.chatMsg [style*="color:#eb5656"] {
+	color:var(--accent) !important;
+}
+
+.chatMsg[style="color:#fc03ec"] {
+    color:var(--background) !important;
+}
+
+#uiBase.onMenu #chatHolder {
+	left: 250px;
+}
+
+#uiBase.onGame #chatHolder {
+    bottom:200px;
+	left:60px;
+}
+
+/* Chat */
+
+/* Top Right */
+
+#killsIcon,#deathsIcon,#streakIcon,#kdIcon,#scoreCount .material-icons,.leaderItem [src*="./img/ranked"] {
+	display:none;
+}
+
+.countIcon {
+	background-color:transparent;
+}
+
+#killsVal,#deathsVal,#streakVal,#myScoreVal,#kdVal,#killCount:after,#deathCount:after,#streakCount:after,#scoreCount:after {
+    font-size:25px;
+    color:var(--accent);
+}
+
+#killCount:after {
+    content:"K";
+}
+
+#deathCount:after {
+	content:"D";
+}
+
+#streakCount:after {
+    content:"S";
+}
+
+#scoreCount:after {
+	content:"P";
+}
+
+#leaderDisplay {
+    background:none;
+    border-radius:0;
+    box-shadow:none;
+    padding-top:10px;
+    margin-right:5px;
+}
+
+.leaderItem {
+    background-color:var(--background);
+    border:solid 4.9px var(--accent);
+    width:320px;
+    height:30px;
+    outline:solid 4.5px var(--background);
+    margin-top:15px;
+    padding-top:10px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.leaderName,.leaderCounter,.leaderNameM,.leaderScore,.leaderNameF {
+    color:var(--accent);
+}
+
+.leaderCounter {
+   margin-left:5px;
+}
+
+.leaderScore {
+    margin-right:5px;
+}
+
+.leaderNameF {
+    opacity:0.5;
+}
+
+.topRightCounters {
+    width:auto !important;
+    position:fixed;
+    bottom:132px;
+    right:100px;
+    background-color:var(--background);
+    border:solid 5px var(--accent);
+    transform:skew(6.5deg);
+    outline: solid 4px var(--background);
+}
+
+/* Top Right */
+
+/* Top Left */
+
+#timerIcon,#curGameInfo,#pingIcon {
+    display:none;
+}
+
+#timerDisplay {
+    width:240px;
+    height:80px;
+    position:fixed;
+    left:50%;
+    top:20px;
+    transform:translateX(-50%) skew(4deg);
+    border-radius:0;
+    margin:0;
+    padding:0;
+    will-change:unset;
+    background-color:var(--background);
+    border:solid 5px var(--accent); 
+    outline:solid 4px var(--background);
+    font-size:60px;
+}
+
+#timerVal {
+    will-change:unset;
+    padding:0;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    color:var(--accent);
+    font-size:40px;
+}
+
+#gameMessage {
+    position:relative;
+    top:150px;
+}
+
+#fpsDisplay {
+	background-color:var(--background);
+	height:15px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:10px;
+	width:120px;
+    border:solid 5px var(--accent);
+    outline: solid 4px var(--background);
+}
+
+#pingDisplay {
+    margin-top:15px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    height:15px;
+    width:120px;
+    background-color:var(--background);
+    border:solid 5px var(--accent);
+    outline: solid 4px var(--background);
+}
+
+#pingText {
+    color:var(--accent);
+}
+
+#pingText:after {
+    content:' PING';
+    color:rgba(255,255,255,0.5);
+}
+
+#ingameFPS {
+    color:var(--accent) !important;
+}
+
+/* Top Left */
+
+#instructionsUpdate {
+    background-color:rgba(0,0,0,0.4);
+    box-shadow:0 0 8px 2px var(--accent);
+}
+
+#instructionHolder {
+    backdrop-filter: grayscale(1);
+} 
