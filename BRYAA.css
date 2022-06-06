@@ -1,0 +1,555 @@
+@import url(https://envyxyz.github.io/removal/removal.css);
+
+
+/*The URL below is used for automatically updating the CSS, DO NOT TOUCH IT*/
+ /*Customization Settings/設定*/
+:root {
+    --accent: #7ab3ff;
+    /*Default Accent: #e15959 | rgb(225, 89, 89) ↽ RGB Values for Settings */
+    --bg-color: #353535;
+    /*Light Mode: #fff | Dark Mode: #353535 or #000*/
+    --text-color: #fff;
+    /*Light Mode: #353535 | Dark Mode: #fff*/
+    --hp-ammo: #fff;
+    /*HP/Ammo Text Color*/
+    --hud-mascot-opacity: 0;
+    /*0 = Invisible | 1 = Visible*/
+    --weapon-icon-brightness: 2;
+    /*0 = Black | 2 = White*/
+    --menu-decal: 1;
+    /*0 = Invisible | 1 = Visible*/
+    --dsh: #000;
+    /* dropshadow color used bcs css sucks*/
+}
+
+/*English Font*/
+@font-face {
+    font-family: gamefont;
+    src: url(https://fonts.gstatic.com/s/lacquer/v15/EYqzma1QwqpG4_BBN7iKXw.woff2);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*日本語フォント*/
+@font-face {
+    font-family: JP;
+    src: url(https://dl.dropboxusercontent.com/s/9b7aer2osbcd388/logotypejp_mp_b_1.1.ttf?dl=0);
+}
+
+/*hi, this krunker css was made by tae.*/
+/*
+ign: びこ
+twitter: @whuuayu
+discord: tae#4444 (do not dm unless it s commission related)
+css discord server: https://discord.gg/phKrnFvE3s
+site: https://taekr.carrd.co/
+*/
+/*If you want to push an update or your name on the css, please consider donating <3*/
+/*Editing and Using Code From This CSS for Nonpersonal Use Is Prohibited :)*/
+/*Make Edits Below*/
+#gameNameHolder {
+    display: none
+}
+
+#menuBtnProfile {
+    font-size: 0!important;
+}
+
+#menuBtnProfile:after {
+    content: 'Profile';
+    font-size: 32px !important;
+}
+
+#instructionHolder {
+    backdrop-filter: blur(5px);
+}
+
+/*Health*/
+#hudClassIcon {
+    display:none;
+}
+
+#hudClassImg {
+    border-radius: 0;
+}
+
+#healthValueHolder {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: 40px;
+    bottom: 95px;
+    background-color: transparent;
+}
+
+#healthValue {
+    color: var(--hp-ammo);
+    font-size: 55px;
+    text-shadow: 8px 4px var(--dsh);
+    filter: drop-shadow(2px 2px var( --dsh)) drop-shadow(-2px -2px var(--dsh)) drop-shadow(-2px 2px var(--dsh)) drop-shadow(2px -2px var(--dsh));
+    transform: skew(-4deg,-3deg);
+}
+
+#healthValue::after {
+    display: none
+}
+
+
+#challIcon {
+    display: none;
+}
+
+#bottomLeftHolder::before {
+    content: " ";
+    background: url(https://media.discordapp.net/attachments/785234774427959349/818944416994558052/yuki_bitch1.png);
+    background-size: 640px;
+    background-position-x: center;
+    background-position-y: top;
+    width: 320px;
+    height: 320px;
+    position: fixed;
+    padding: 0;
+    border-radius: 0px;
+    bottom: 0;
+    left: calc(50% - 420px);
+    z-index: -2;
+    filter: drop-shadow(8px 4px var(--accent));
+    opacity: var(--hud-mascot-opacity);
+}
+
+#healthBar {
+    width: 250px;
+    height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 0;
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    transform: skew(-4deg,-3deg);
+    outline: 3px solid var(--dsh);
+    border: 10px solid #fff;
+    z-index: -3;
+}
+
+.healthBarSeg {
+    width: -webkit-fill-available;
+    margin: 0 -1px;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.hpBSeg {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hpBSeg[style*="#cd3732"] {
+    background-color: var(--accent) !important;
+}
+
+/*Ammo*/
+#ammoDisplay {
+    transform: unset;
+    background-color: #7ab3ff;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    height: 45px;
+    width: 250px;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(#000, #000);
+    outline: 3px solid var(--dsh);
+    border: 10px solid #fff;
+    z-index: -3;
+    transform: skew(4deg,4deg);
+    border-radius: 0;
+}
+
+#ammoVal {
+    color: var(--hp-ammo);
+    font-size: 85px;
+    position: fixed;
+    left: 55px;
+    bottom: -10px;
+    text-shadow: 12px 6px var(--dsh);
+    filter: drop-shadow(2px 2px var(--dsh)) drop-shadow(-2px -2px var(--dsh)) drop-shadow(-2px 2px var(--dsh)) drop-shadow(2px -2px var(--dsh));
+    transform: skewY(0deg);
+}
+
+#ammoMax {
+    color: var(--hp-ammo);
+    font-size: 35px;
+    position: fixed;
+    left: 150px;
+    bottom: -10px;
+    text-shadow: 12px 6px var(--dsh);
+    filter: drop-shadow(2px 2px var(--dsh)) drop-shadow(-2px -2px var(--dsh)) drop-shadow(-2px 2px var(--dsh)) drop-shadow(2px -2px var(--dsh));
+    transform: skewY(0deg);
+}
+
+#ammoIcon {
+    display: none;
+}
+
+#reloadMsg {
+    bottom: calc(50% - 200px);
+    background-color: transparent !important;
+    border: none;
+    color: var(--accent);
+    font-family: 'Material Icons';
+    font-size: 0;
+    animation: breathe 1s infinite alternate;
+}
+
+#reloadMsg::before {
+    content: "report_problem";
+    font-size: 64px;
+}
+
+.killStreakItem {
+    background-color: #000;
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% + 320px);
+    box-shadow: 6px 6px var(--accent);
+}
+
+/* menu shit */
+
+#windowHolder::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: -48px;
+    width: 420px;
+    height: 420px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png);
+    background-size: 420px;
+    background-repeat: no-repeat;
+    z-index: 1;
+    pointer-events: none;
+    filter: opacity(0.5) drop-shadow(2px 2px 0px var(--bg-color)) drop-shadow(-2px -2px 0px var(--bg-color)) drop-shadow(2px -2px 0px var(--bg-color)) drop-shadow(-2px 2px 0px var(--bg-color));
+    opacity: var(--menu-decal);
+}
+
+#windowHolder::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    right: 0px;
+    bottom: -48px;
+    width: 420px;
+    height: 420px;
+    background-color: var(--accent);
+    pointer-events: none;
+    -webkit-mask-image: url(https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png);
+    -webkit-mask-size: 420px;
+    -webkit-mask-position: center top;
+    opacity: var(--menu-decal);
+    z-index: 2;
+}
+
+#timerDisplay {
+	background-color: #fff0;
+    	box-shadow: #fff0;
+	text-align: center;
+	position: fixed;
+	transform: translateX(-75%);
+	top: 0;
+	left: 50%;
+	width: 150px;
+	height: 35px;
+	will-change: unset;
+    box-shadow: 0px 0px #fff0;
+	text-shadow: 8px 4px var(--dsh);
+    filter: drop-shadow(2px 2px var(--dsh)) drop-shadow(-2px -2px var(--dsh)) drop-shadow(-2px 2px var(--dsh)) drop-shadow(2px -2px var(--dsh));
+}
+
+#timerVal {
+	font-size: 75px;
+	padding-left: 0;
+	will-change: unset; 
+	color: #fff;
+}
+
+#timerIcon {
+	display: none;
+}
+
+#timerDisplay::before {
+    display:none;
+}
+
+/*Top Right*/
+
+#leaderDisplay {
+    background-color: var(--transparent);
+    border-radius: 0;
+    box-shadow: none;
+    padding-top: 32px;
+    margin-right: 12px;
+	filter: brightness(1) drop-shadow(2px 2px #000) drop-shadow(-2px -2px #000) drop-shadow(-2px 2px #000) drop-shadow(2px -2px #000) drop-shadow(4px 4px 0px #000);
+}
+
+#leaderDisplay::before {
+    display:none;
+}
+
+/*Section II: Chat*/
+
+#voiceDisplay {
+    display: none;
+}
+
+#uiBase.onMenu #chatHolder {
+    left: unset;
+    right: 30px;
+    bottom: 30px !important;
+    z-index: 21;
+}
+
+#chatHolder[style="bottom: 148px;"] {
+    left: 30px !important;
+    bottom: 30px !important;
+}
+
+#chatList {
+    background-color: transparent;
+}
+
+#uiBase.onMenu #chatList {
+    text-align: right;
+}
+
+.chatTextOutline {
+    text-shadow: none;
+}
+
+.chatItem {
+    background-color: #fff !important;
+    color: var(--accent);
+    font-size: 20px;
+    border-radius: 0px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    margin-right: 6px;
+    max-width: 280px;
+    box-shadow: none;
+	outline: 5px solid var(--dsh);
+	transform: skew(-4deg,-3deg);
+}
+
+#uiBase.onMenu .chatItem {
+    box-shadow: none;
+}
+
+.chatMsg {
+    color: #353535;
+}
+
+.chatMsg span[style*="#fff"] {
+    color: #353535 !important;
+}
+
+.chatMsg span[style*="#9eeb56"] {
+    color: #353535 !important;
+}
+
+.chatMsg[style="color:#fc03ec"] {
+    color: #353535 !important;
+}
+
+#chatInputHolder {
+    background-color: transparent;
+    border: none;
+}
+
+#chatInput {
+    color: #fff;
+    background-color: var(--accent);
+    border-radius: 0px;
+    transform: scale(0);
+    height: 0;
+    padding: 0;
+    transition-duration: 0.25s;
+    font-size: 16px;
+}
+
+#chatInput:focus {
+    height: 100%;
+    padding: 8px 16px;
+    transform: scale(1);
+}
+
+#chatInput::placeholder {
+    color: #fff;
+}
+
+.weaponChatIcon, .headShotChatIcon {
+    filter: brightness(0.5);
+}
+
+#instructionHolder {
+    backdrop-filter: none;
+}
+
+#chatSwitchHolder {
+	display: none!Important
+}
+
+#uiBase {
+    height: 117.647058% !important;
+    width: 88.235294% !important;
+    transform: scale(1.133333, 0.85) !important;
+}
+
+/* counters */
+
+.topRightCounters {
+    position: unset;
+    bottom: unset;
+    right: unset;
+	filter: brightness(1) drop-shadow(2px 2px #000) drop-shadow(-2px -2px #000) drop-shadow(-2px 2px #000) drop-shadow(2px -2px #000) drop-shadow(4px 4px 0px #000);
+}
+
+.countIcon {
+    background-color: transparent;
+    border-radius: 0;
+    margin-left: 20px;
+    margin-bottom: 0;
+    padding: 7px;
+}
+
+#deathsVal,
+#killsVal,
+#livesDisp,
+#streakVal,
+#myScoreVal {
+    color: white !important;
+    bottom: 7px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+}
+
+#deathsVal::after,
+#killsVal::after,
+#streakVal::after,
+#myScoreVal::after,
+#livesDisp::after {
+    display: block;
+    position: fixed;
+    margin-top: 45px;
+    font-size: 14px;
+}
+
+#deathsVal::after {
+    content: 'Deaths';
+}
+
+#killsVal::after {
+    content: 'Kills';
+}
+
+#streakVal::after {
+    content: 'Streak';
+}
+
+#myScoreVal::after {
+    content: 'Score';
+}
+
+#livesDisp::after {
+    content: 'Lives';
+}
+
+#killsIcon,
+#deathsIcon,
+#streakIcon,
+#scoreCount .material-icons,
+#livesCount .material-icons {
+    display: none;
+}
+
+.kfItem {
+    border-radius: 10px;
+    background-color: var(--ingame-bg-color);
+}
+
+#killStreakHolder {
+    position: fixed;
+    bottom: 75px;
+	right: 15px;
+	margin-right: 0;
+    margin-bottom: 0;
+}
+
+.killStreakItem {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+}
+
+/*Weapon Display*/
+
+#weapDisplay {
+    bottom: 100px;
+    right: 60px;
+	transform: skew(15deg,4deg);
+}
+
+.weapItem {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.weapIcon {
+    filter: brightness(var(--weapon-icon-brightness)) drop-shadow(2px 2px #000) drop-shadow(-2px -2px #000) drop-shadow(-2px 2px #000) drop-shadow(2px -2px #000) drop-shadow(4px 4px 0px #000);
+    opacity: 0 !important;
+    transition-duration: 0.25s;
+    height: 0;
+    width: 160px;
+}
+
+.weapIcon[style*="1"] {
+    opacity: 1 !important;
+    height: 80px;
+}
+
+#weapIconMel {
+    margin: 0 !important;
+}
+
+.weapKey {
+    display: none;
+}
+
+#curGameInfo{
+	display: none;
+}
+.leaderName {
+    color: #7ab3ff;
+}
+#pingDisplay {
+    color: #7ab3ff;
+}
+
+#pingText {
+    color: #7ab3ff;
+}
+#pingIcon {
+    color: #7ab3ff !important;
+}
+#fpsText {
+    color: #7ab3ff;
+}
+#ingameFPS {
+    color: #7ab3ff !important; 
+}
