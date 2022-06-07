@@ -1,0 +1,317 @@
+@import url(https://css.reizu.moe/reizu/reizu.css); @import url(https://envyxyz.github.io/removal/removal.css); :root {
+    --accent-color: #cfbfff;
+    --health-color: var(--accent-color);
+    --ammo-color: #fff;
+    --premium-color: #fbc02d;
+    --verified-color: #40c4ff;
+    --menu-bg-color: rgba(15, 15, 15, .2);
+    --menu-bg-color-secondary: rgba(0, 0, 0, .5);
+    --ingame-bg-color: rgba(15, 15, 15, .2);
+    --text-transform: lowercase;
+    --img-size-h: 95px;
+    --img-size-w: 95px;
+    --img-cont: url(https://tenor.com/view/sailor-moon-suit-old-man-peace-sign-sailor-scout-anime-gif-14298094);
+    --img-b_radii: 15PX;
+    --ab-shad: 5px 5px 5px rgb(0 0 0 / 0.55);
+}
+
+@font-face {
+    font-family: gamefont;
+    src: url(https://dl.dropbox.com/s/3vl3i7wdkz9qz9m/Akira_Expanded_Demo%5B1%5D.otf?dl=0);
+}
+
+@font-face {
+    font-family: hpammo;
+    src: url(https://dl.dropboxusercontent.com/s/0rsc1wpzsczhfbq/StretchPro%5B1%5D.otf?dl=0);
+}
+
+#healthValueHolder {
+    background-color: transparent;
+    width: 200px;
+    height: 130px;
+    left: 30.5%;
+    bottom: 25px;
+}
+
+#healthValue {
+    font-size: 96px;
+}
+
+#ammoDisplay {
+    width: max-content;
+    height: 125px;
+    right: 30%;
+    bottom: 25px;
+    background-image: linear-gradient(var(--accent-color),var(--accent-color));
+    background-position-y: 120px
+}
+
+#ammoVal {
+    font-size: 96px;
+    width: 150px;
+    text-align: left;
+    text-shadow: var(--ab-shad)
+}
+
+#weapDisplay {
+    display: none !important;
+}
+
+#killCardHolder {
+    bottom: 20px;
+}
+
+#reloadMsg {
+    bottom: 150px;
+    text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+/*
+#timerDisplay {
+	width: 100px;
+	height: 80px;
+	background-color: transparent;
+	will-change: unset;
+}
+
+#timerVal {
+	font-size: 64px;
+	padding-left: 0;
+	will-change: unset;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+#teamScores {
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 685px;
+	height: 50px;
+	padding: 10px;
+	padding-left: 0;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+	margin-left: 0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	border-radius: 0;
+	background-color: transparent;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+.tScore {
+	display: inline-block;
+}
+
+#tScoreV1 {
+	position: fixed;
+	left: -25%;
+	top: 4px;
+}
+
+#tScoreV2 {
+	position: fixed;
+	left: 25%;
+	top: 4px;
+}
+
+.tScoreT {
+	width: 100%;
+	margin-top: 12px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+	z-index: 2;
+}
+
+.tScoreM {
+	display: none;
+}
+
+.tScoreF {
+	left: 50%;
+	width: 90px;
+	height: 60px;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	background-color: #eb5656;
+	color: transparent;
+	opacity: 50%;
+	z-index: 1;
+}
+
+.tScoreF.you {
+	background-color: #5699eb;
+	color: transparent;
+	opacity: 50%;
+	z-index: 1;
+}
+
+.tScoreC {
+	left: 50%;
+	width: 90px;
+	height: 60px;
+	margin-left: 125px;
+	margin-right: 125px;
+	background-color: var(--accent-color);
+	opacity: 50%;
+	z-index: 1;
+}
+
+.tScoreC.you {
+	background-color: #fff;
+	opacity: 50%;
+	z-index: 1;
+}
+
+#gameMessage {
+	top: 80px;
+	font-size: 18px;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+#ingameFPS {
+	color: #fff !important;
+	visibility: visible;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+#pingText {
+	color: #fff !important;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+#pingIcon {
+	color: var(--accent-color) !important;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+#pingDisplay .material-icons {
+	font-size: 20px;
+	text-shadow: 2px 2px 3px rgba(30, 30, 30, .5);
+}
+
+#streamContainer {
+	display: inline-block !important;
+}
+*/
+.menBtnIcn {
+    display: none!important
+}
+
+#menuItemContainer {
+    background-color: transparent
+}
+
+#gameMessage {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 90px;
+}
+
+#healthBar {
+    position: fixed;
+    display: inline-flex;
+    left: 50.5%;
+    transform: translateX(-50%);
+    height: 20px;
+    bottom: 65px;
+    border-radius: 0px;
+    z-index: -1 ;
+    background-color: rgba(0,0,0,0.4);
+    box-shadow: var(--ab-shad)
+}
+
+.healthBarSeg {
+    margin: 0px -1px;
+    border-radius: 0;
+    background-color: transparent;
+    width: 56px;
+}
+
+.hpBSeg {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#healthValueHolder {
+    display: none
+}
+
+.material-icons {
+    color: var(--accent-color)!important
+}
+
+.progressBarInner, .xpBarB, .chalXPBarC {
+    height: 100%;
+    background-image: linear-gradient(to right, var(--accent-color), var(--accent-color), 94%, white);
+}
+
+#startServBtn[style] {
+    visibility: hidden;
+}
+
+#startServBtn[style]::before {
+    content: 'Start Game';
+    position: absolute;
+    background: var(--menu-bg-color)!important;
+    color: #FFF!important;
+    border-radius: 0px!important;
+    transition-duration: 250ms!important;
+    box-shadow: 0 0 0 black!important;
+    padding: 12px;
+    padding-right: 90px;
+    padding-left: 78.1px;
+    visibility: visible;
+    top: 0;
+    right: 0;
+}
+
+#startServBtn[style]:hover::before {
+    background: var(--menu-bg-color-secondary)!important;
+    color: var(--accent-color)!important;
+    box-shadow: 0 0 0 black!important
+}
+
+#menuWindow * {
+    border: hidden;
+}
+
+#hudClassIcon {
+    display: block!important;
+    position: fixed;
+    border-radius: 0;
+    left: 31%;
+    bottom: 28px;
+    background-color: transparent;
+    width: 150px;
+    text-align: right
+}
+
+#hudClassIcon img {
+    height: var(--img-size-h);
+    width: var(--img-size-w);
+    content: var(--img-cont);
+    box-shadow: var(--ab-shad);
+    text-align: right;
+    border-radius: var(--img-b_radii)
+}
+
+.slider {
+    transform: translateY(-10px)
+}
+
+#uiBase.onMenu #chatHolder {
+    bottom: 90px!important
+}
+
+#termsInfo::before {
+    animation: wmMI 5s infinite alternate;
+    content: '';
+}
