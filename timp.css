@@ -1,0 +1,2122 @@
+/*PLEASE READ BELOW*/
+
+/*
+By Using this Krunker CSS, you have agreed to NOT share this CSS with anyone who is not currently in TIMP,
+failing to do so will result in the immediate ban and removal from the clan.
+*/
+
+/*↓YOU DO NOT NEED TO DO ANYTHING WITH THIS LINK, IT IS FOR AUTO UPDATES↓*/
+@import url(https://3kan-104.github.io/lIIlIllIIlIl/sauce.css);
+/*↑YOU DO NOT NEED TO DO ANYTHING WITH THIS LINK, IT IS FOR AUTO UPDATES↑*/
+
+/*Customization Settings/CSS設定*/
+
+:root {
+    /*Main Color*/
+    --accent: #c50020;
+    /*Secondary Detail Color*/
+    --secondary: #000;
+    /*Shading*/
+    --shadow: rgba(0,0,0,.125);
+    /*Detail/Accent Text Color*/
+    --accent-text: #fff;
+    --secondary-text: #fff;
+    /*Menu Window*/
+    --menu-bg: #fff;
+    --menu-text: rgba(0,0,0,.25);
+    /*HUD Text*/
+    --hud-text: #fff;
+    --hud-shadow: rgba(50,50,50,.25);
+}
+
+/*Fonts/フォント*/
+
+@font-face {
+    font-family: gamefont;
+    src: url(https://fonts.gstatic.com/s/spartan/v3/l7gAbjR61M69yt8Z8w6FZf9WoBxdBrFivl6JABQ.woff2);
+}
+
+@font-face {
+    font-family: JP;
+    src: url(https://raw.githubusercontent.com/coz-m/MPLUS_FONTS/master/fonts/ttf/Mplus2-Black.ttf);
+}
+/* timp css*/
+@font-face {
+    font-family: logotype;
+    src: url(https://dl.dropboxusercontent.com/s/2ovgbiuqibc3oe4/Play%20Pretend.otf?dl=0);
+}
+
+* {
+    font-family: gamefont, JP;
+}
+
+a, a:active, a:visited {
+    color: var(--accent);
+}
+
+/*Ad Block*/
+
+#aHolder, .endAHolder, #tlInfHold, #newsHolder {
+    display: none !important;
+}
+
+#onetrust-consent-sdk {
+    display: none;
+}
+
+/*Animations*/
+
+@keyframes menuWindow {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.rainbowText {
+    animation: none !important;
+    color:#fff;
+}
+
+/*Loading Screen*/
+
+#loadGamNm, #loadInfoRHolder, #loadHeader {
+    display: none;
+}
+
+#loadEditrBtn {
+    display: none;
+}
+
+#initLoader {
+    background-color: var(--menu-bg)!important;
+}
+
+#initLoader::before {
+    color: var(--menu-text);
+    content: "TIMP";
+    font-size: 128px;
+    font-family: logotype;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 32px);
+    transform: translateX(-50%);
+    animation: fade 2s infinite alternate;
+}
+
+#lC-cont {
+    display: block;
+    background-color: var(--accent);
+    color: transparent !important;
+    background-image: url(https://cdn.discordapp.com/attachments/733752056807948390/862778794896392202/TIMP_White_Logo.png);
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    transform: translateY(-64px);
+    animation: fade 2s infinite alternate;
+}
+
+.lC-cube {
+    display: none;
+}
+
+#loadTipsHolder {
+    bottom: 20px;
+    color: var(--menu-text);
+    animation: fade 2s infinite alternate;
+}
+
+#loadInfoLHolder::before {
+    content: "css by tae";
+    color: var(--accent);
+    font-size: 24px;
+}
+#loadInfoLHolder {
+    font-size: 0;
+}
+
+/*Section II: Chat*/
+
+#chatHolder {
+    opacity: 1;
+}
+
+#uiBase.onMenu #chatHolder {
+    left: unset;
+    right: 480px;
+    bottom: 20px;
+    transform: unset;
+}
+
+#chatInputHolder {
+    background-color: var(--accent);
+    border-radius: 32px;
+    display: flex;
+    border: none;
+}
+
+#chatInput {
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    color: var(--accent-text);
+}
+
+#chatInput::placeholder {
+    color: var(--accent-text);
+}
+
+#chatSwitch {
+    font-size: 48px;
+    margin: 0;
+}
+
+#chatList {
+    background-color: transparent;
+    -webkit-mask-image: linear-gradient(0deg, #000, transparent 480px);
+}
+
+#uiBase.onMenu #chatList {
+    text-align: center;
+}
+
+#chatList::-webkit-scrollbar {
+    display: none;
+}
+
+.chatItem {
+    font-size: 24px;
+}
+
+#uiBase.onGame #chatHolder {
+    bottom: 200px;
+}
+
+#uiBase.onGame #chatInputHolder {
+    background-color: transparent;
+}
+
+#uiBase.onGame #chatInput, #uiBase.onGame #chatSwitch {
+    text-shadow: -1px -1px 0 rgba(0,0,0,.5), 1px -1px 0 rgba(0,0,0,.5), -1px 1px 0 rgba(0,0,0,.5), 1px 1px 0 rgba(0,0,0,.5);
+}
+
+#voiceDisplay {
+    display: none;
+}
+
+/*Section III: Main Menu*/
+
+#uiBase.onMenu #instructions {
+    font-family: logotype;
+    animation: none;
+    font-size: 0;
+    color: rgba(255,255,255,.125);
+}
+
+#uiBase.onMenu #instructions::after {
+    content: "TIMP";
+    font-size: 69vh;
+}
+
+#instructionHolder {
+    z-index: -1;
+    backdrop-filter: grayscale(1);
+}
+
+#instructionsUpdate {
+    background-color: transparent;
+}
+
+#mainLogo, #seasonLabel {
+    display: none;
+}
+
+#menuHolder {
+    z-index: unset;
+}
+
+#menuHolder::after {
+    content: " ";
+    width: 880px;
+    height: 640px;
+    position: absolute;
+    bottom: 0;
+    left: -128px;
+    background-color: #000;
+    clip-path: polygon(50% 70%, 66% 50%, 100% 100%, 0 100%, 33% 33%);
+}
+
+.onMenu #menuHolder::before {
+    content: " ";
+    font-family: logotype;
+    color: var(--accent);
+    text-align: end;
+    padding-right: 20px;
+    font-size: 96px;
+    line-height: 128px;
+    position: fixed;
+    height: 200px;
+    width: 1600px;
+    bottom: 0;
+    background-color: var(--menu-bg);
+    clip-path: polygon(0 0, 0% 100%, calc(100% - 420px) 100%);
+    z-index: 1;
+}
+
+/*Left Header*/
+
+#signedOutHeaderBar {
+    top: unset;
+    bottom: 20px;
+    z-index: 4;
+    background-color: transparent;
+}
+
+.button.lgn {
+    border: none !important;
+    background-color: transparent;
+    color: var(--menu-text);
+    font-size: 0 !important;
+    width: 96px !important;
+    height: 96px;
+}
+
+.lgn .material-icons {
+    display: none !important;
+    font-size: 0 !important;
+}
+
+.button.lgn::after {
+    content: "login";
+    font-family: 'Material Icons';
+    font-size: 96px;
+    font-weight: bold;
+    display: block;
+}
+
+.headerBarLeft {
+    height: auto;
+}
+
+#signedInHeaderBar  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0;
+    padding-left: 196px;
+    top: unset;
+    bottom: 20px;
+    left: 20px;
+    z-index: 3;
+    background-color: transparent;
+    transition-duration: 0.25s;
+    transform-origin: bottom left;
+    pointer-events: none;
+    height: 196px;
+    zoom: 1.5;
+}
+
+#signedInHeaderBar:hover {
+    transform: scale(1.25);
+    pointer-events: all;
+}
+
+#signedInHeaderBar div {
+    pointer-events: none;
+}
+
+#signedInHeaderBar:hover div{
+    pointer-events: all;
+}
+
+.verticalSeparator {
+    display: none;
+}
+
+#signedInHeaderBar div[style="display:inline-block;"] {
+    display: flex !important;
+    flex-direction: column;
+}
+
+#menuMiniProfilePic {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 8px solid var(--accent);
+    background-color: var(--accent);
+    background-image: url(https://cdn.discordapp.com/attachments/733752056807948390/862778794896392202/TIMP_White_Logo.png);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    bottom: 0;
+    left: 0;
+    pointer-events: all;
+    image-rendering: auto;
+    box-shadow: inset 0 0 0 0px var(--shadow);
+    transition-duration: 0.05s;
+}
+
+#menuUsernameContainer::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 196px;
+    height: 196px;
+    top: 0;
+    left: 0;
+    pointer-events: all;
+    z-index: 3;
+}
+
+#signedInHeaderBar:active #menuMiniProfilePic {
+    transform: scale(1.05);
+    box-shadow: inset 0 0 0 100px var(--shadow);
+    border: 8px solid var(--shadow);
+}
+
+#menuMiniProfilePic[src*="krunker.io/textures/classes"] {
+    content: linear-gradient(transparent,transparent);
+}
+
+#menuAccountUsername {
+    display: none;
+}
+
+#signedInHeaderBar:hover #menuAccountUsername {
+    transform: translateY(0px);
+}
+
+.progressBar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 196px;
+    width: 196px;
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+    background-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    transition-duration: 0.25s;
+    order: 1;
+    z-index: 2;
+    clip-path: circle(90px at 98px 98px);
+    transform: rotate(-90deg);
+}
+
+#signedInHeaderBar:hover .progressBar {
+    opacity: 1;
+}
+
+.progressBarInner {
+    background-color: var(--shadow);
+    clip-path: circle(98px at 98px 98px);
+    background-image: none;
+}
+
+#mLevelCont {
+    position: absolute;
+    left: 98px!important;
+    bottom: 0px;
+    background-color: transparent;
+    font-size: 24px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0;
+    transform: translateX(-50%);
+    transition-duration: 0.25s;
+    overflow: hidden;
+    text-overflow: clip;
+    opacity: 0;
+    pointer-events: none;
+    margin: 0;
+    z-index: 4;
+    text-shadow: var(--accent) 4px 0px 0px, var(--accent) 3.87565px 0.989616px 0px, var(--accent) 3.51033px 1.9177px 0px, var(--accent) 2.92676px 2.72656px 0px, var(--accent) 2.16121px 3.36588px 0px, var(--accent) 1.26129px 3.79594px 0px, var(--accent) 0.282949px 3.98998px 0px, var(--accent) -0.712984px 3.93594px 0px, var(--accent) -1.66459px 3.63719px 0px, var(--accent) -2.51269px 3.11229px 0px, var(--accent) -3.20457px 2.39389px 0px, var(--accent) -3.69721px 1.52664px 0px, var(--accent) -3.95997px 0.56448px 0px, var(--accent) -3.97652px -0.432781px 0px, var(--accent) -3.74583px -1.40313px 0px, var(--accent) -3.28224px -2.28625px 0px, var(--accent) -2.61457px -3.02721px 0px, var(--accent) -1.78435px -3.57996px 0px, var(--accent) -0.843183px -3.91012px 0px, var(--accent) 0.150409px -3.99717px 0px, var(--accent) 1.13465px -3.8357px 0px, var(--accent) 2.04834px -3.43574px 0px, var(--accent) 2.83468px -2.82216px 0px, var(--accent) 3.44477px -2.03312px 0px, var(--accent) 3.84068px -1.11766px 0px, var(--accent) 3.9978px -0.132717px 0px;
+}
+
+#mLevelContV {
+    line-height: 40px;
+}
+
+#mLevelContV::before {
+    content: "LVL ";
+}
+
+#mLevelCont .rankClck {
+    display: none;
+}
+
+#signedInHeaderBar:hover #mLevelCont {
+    opacity: 1;
+}
+
+.krInfo {
+    position: absolute;
+    left: 98px;
+    bottom: 28px;
+    height: 36px;
+    border-radius: 20px;
+    transform: translateX(-50%) scaleX(1);
+    opacity: 0;
+    transform-origin: left;
+    transition-duration: 0.25s;
+    z-index: 4;
+}
+
+#signedInHeaderBar:hover .krInfo {
+    opacity: 1;
+}
+
+.krSocial {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    opacity: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.krSocial:hover {
+    transform: unset;
+}
+
+#menuKRCount {
+    font-size: 24px;
+    color: var(--menu-bg);
+    text-shadow: var(--accent) 4px 0px 0px, var(--accent) 3.87565px 0.989616px 0px, var(--accent) 3.51033px 1.9177px 0px, var(--accent) 2.92676px 2.72656px 0px, var(--accent) 2.16121px 3.36588px 0px, var(--accent) 1.26129px 3.79594px 0px, var(--accent) 0.282949px 3.98998px 0px, var(--accent) -0.712984px 3.93594px 0px, var(--accent) -1.66459px 3.63719px 0px, var(--accent) -2.51269px 3.11229px 0px, var(--accent) -3.20457px 2.39389px 0px, var(--accent) -3.69721px 1.52664px 0px, var(--accent) -3.95997px 0.56448px 0px, var(--accent) -3.97652px -0.432781px 0px, var(--accent) -3.74583px -1.40313px 0px, var(--accent) -3.28224px -2.28625px 0px, var(--accent) -2.61457px -3.02721px 0px, var(--accent) -1.78435px -3.57996px 0px, var(--accent) -0.843183px -3.91012px 0px, var(--accent) 0.150409px -3.99717px 0px, var(--accent) 1.13465px -3.8357px 0px, var(--accent) 2.04834px -3.43574px 0px, var(--accent) 2.83468px -2.82216px 0px, var(--accent) 3.44477px -2.03312px 0px, var(--accent) 3.84068px -1.11766px 0px, var(--accent) 3.9978px -0.132717px 0px;
+}
+
+.junkInfo {
+    opacity: 0;
+    transition-duration: 0.25s;
+}
+
+#signedInHeaderBar:hover .junkInfo {
+opacity: 1;
+}
+
+#menuJNKCount {
+    font-size: 24px;
+    text-shadow: var(--accent) 4px 0px 0px, var(--accent) 3.87565px 0.989616px 0px, var(--accent) 3.51033px 1.9177px 0px, var(--accent) 2.92676px 2.72656px 0px, var(--accent) 2.16121px 3.36588px 0px, var(--accent) 1.26129px 3.79594px 0px, var(--accent) 0.282949px 3.98998px 0px, var(--accent) -0.712984px 3.93594px 0px, var(--accent) -1.66459px 3.63719px 0px, var(--accent) -2.51269px 3.11229px 0px, var(--accent) -3.20457px 2.39389px 0px, var(--accent) -3.69721px 1.52664px 0px, var(--accent) -3.95997px 0.56448px 0px, var(--accent) -3.97652px -0.432781px 0px, var(--accent) -3.74583px -1.40313px 0px, var(--accent) -3.28224px -2.28625px 0px, var(--accent) -2.61457px -3.02721px 0px, var(--accent) -1.78435px -3.57996px 0px, var(--accent) -0.843183px -3.91012px 0px, var(--accent) 0.150409px -3.99717px 0px, var(--accent) 1.13465px -3.8357px 0px, var(--accent) 2.04834px -3.43574px 0px, var(--accent) 2.83468px -2.82216px 0px, var(--accent) 3.44477px -2.03312px 0px, var(--accent) 3.84068px -1.11766px 0px, var(--accent) 3.9978px -0.132717px 0px;
+    color: var(--menu-bg);
+}
+
+#mailContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    position: relative;
+    left: -20px;
+    order: 4;
+    background-color: var(--accent);
+    border-radius: 20px;
+    transform: translateX(-100px);
+    transform-origin: left;
+    transition-duration: 0.25s;
+    z-index: -1;
+    opacity: 0;
+}
+
+#signedInHeaderBar:hover #mailContainer {
+    z-index: 4;
+    opacity: 1;
+}
+
+#signedInHeaderBar:hover #mailContainer {
+    transform: translateX(0px);
+}
+
+#mailIcon {
+    font-size: 24px !important;
+}
+
+#mailIcon:hover {
+    transform: unset;
+}
+
+#mailCount {
+    background-color: var(--accent);
+    text-shadow: none;
+}
+
+/*Right Header*/
+
+#headerRight::before {
+    content: " ";
+    position: fixed;
+    display: block;
+    width: 1600px;
+    height: 200px;
+    top: 0;
+    right: 0;
+    background-color: var(--accent);
+    clip-path: polygon(420px 0, 100% 100%, 100% 0);
+    z-index: 10;
+}
+
+#headerRight::after {
+    content: " ";
+    position: fixed;
+    display: block;
+    width: 1600px;
+    height: 208px;
+    top: 0;
+    right: 0;
+    background-color: var(--shadow);
+    clip-path: polygon(420px 0, 100% 100%, 100% 0);
+    z-index: 9;
+}
+
+.headerBarRight {
+    background-color: transparent;
+    padding: 0;
+    right: 20px;
+    top: 20px;
+    height: auto;
+}
+
+.imageButton, #editorBtnM {
+    display: none !important;
+}
+
+.menuDebugInfo {
+    display: none;
+}
+
+#menuRegionLabel {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 32px;
+}
+
+/*Spec*/
+
+#uiBase.onMenu #spectButton {
+    width: 48px;
+    top: unset;
+    bottom: 27px;
+    left: unset;
+    right: 240px;
+    transform: unset;
+    z-index: 11;
+    transition-duration: 0.1s;
+}
+
+#uiBase.onMenu #spectButton:hover {
+    transform: scale(0.95);
+}
+
+#spectButton span[style="font-size:15px;color:rgba(255,255,255,0.6)"] {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+#spectButton .switchsml {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.sliderSml {
+    opacity: 1;
+}
+
+.sliderSml::before {
+    content: "visibility_off";
+    font-size: 44px;
+    color: var(--accent-text);
+    width: max-content;
+    height: auto;
+    background-color: var(--accent);
+    text-align: center;
+    font-family: 'Material Icons';
+    padding: 8px;
+}
+
+input:checked+.sliderSml::before {
+    content: "visibility";
+    transform: unset;
+}
+
+input:checked+.sliderSml {
+    background-color: transparent !important;
+}
+
+.sliderSml {
+    opacity: 1;
+    background-color: transparent;
+}
+
+/*Menu Items*/
+
+#menuItemContainer {
+    top: 48px;
+    bottom: unset;
+    left: unset;
+    right: 160px;
+    width: 600px;
+    height: 64px;
+    flex-direction: row;
+    z-index: 11;
+    transform: rotate(9.625deg);
+    background-color: transparent;
+}
+
+.menBtnIcn {
+    display: none !important;
+}
+
+.menuItem {
+    background-color: transparent;
+}
+
+.menuItem:hover {
+    border-left: none;
+}
+
+.menuItem .menuItemIcon {
+    display: none;
+}
+
+.menuItem .menuItemTitle {
+    margin-top: 0;
+    font-size: 0 !important;
+    font-family: 'Material Icons';
+    transition-duration: 0.25s;
+}
+
+.menuItem .menuItemTitle::after {
+    font-size: 40px;
+    color: var(--accent-text);
+}
+
+#menuBtnProfile.menuItemTitle::after {
+    content: "person";
+}
+
+#menuBtnShop.menuItemTitle::after {
+    content: "sell";
+}
+
+#menuBtnChall.menuItemTitle::after {
+    content: "star";
+}
+
+#menuBtnSocial.menuItemTitle::after {
+    content: "people";
+}
+
+#menuBtnMaps.menuItemTitle::after {
+    content: "explore";
+}
+
+#menuBtnMods.menuItemTitle::after {
+    content: "extension";
+}
+
+#menuBtnSettings.menuItemTitle::after {
+    content: "build";
+}
+
+#menuBtnExit.menuItemTitle::after {
+    content: "cancel";
+}
+
+.menuItem:hover #menuBtnExit {
+    transform: rotate(90deg);
+}
+
+.menuItem:hover .menuItemTitle {
+    opacity: 0.9;
+}
+
+#subLogoButtons {
+    display: flex;
+    align-items: center;
+    bottom: 20px;
+    left: unset;
+    right: 20px;
+    width: 60px;
+    background-color: var(--accent);
+    overflow: hidden;
+    pointer-events: all;
+    transition-duration: 0.5s;
+    z-index: 12;
+    border-radius: 36px;
+    transform: unset;
+}
+
+#subLogoButtons>.button {
+    height: 48px;
+    margin-bottom: 0;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    padding: 0px !important;
+    background-color: transparent !important;
+    color: var(--menu-bg);
+    line-height: 48px;
+    border: none !important;
+}
+
+#subLogoButtons:hover {
+    width: 580px;
+    justify-content: space-between;
+}
+
+#menuBtnJoin {
+    margin-right: 20px;
+}
+
+#subLogoButtons::before {
+    content: "add";
+    font-family: 'Material Icons';
+    font-size: 60px;
+    line-height: 60px;
+    width: 60px;
+    color: var(--menu-bg);
+    background-color: var(--accent);
+    border-radius: 50%;
+    pointer-events: all;
+}
+
+#faceItIconM {
+    display: none;
+}
+
+#rankedSoonTm {
+    display: none;
+}
+
+/*Loadout*/
+
+#menuClassContainer {
+    transform: unset;
+    z-index: 10 !important;
+}
+
+#customizeButton {
+    position: fixed;
+    bottom: 20px;
+    right: 120px;
+    font-size: 0 !important;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    margin: 0;
+    box-shadow: none !important;
+    background-color: var(--accent) !important;
+    border-radius: 50%;
+    border: none !important;
+}
+
+#customizeButton .material-icons {
+    margin: 0 !important;
+    font-size: 40px !important;
+    color: var(--menu-bg) !important;
+    text-shadow: none;
+}
+
+#policeButton {
+    margin: 0;
+    position: fixed;
+    bottom: 20px;
+    top: unset;
+    right: 332px;
+    left: unset;
+    padding: 0;
+    width: 60px !important;
+    height: 60px !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none;
+    border: none !important;
+}
+
+#policeButton::before {
+    content: "local_police";
+    font-family: 'Material Icons';
+    font-size: 44px;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    display: block;
+}
+
+#policeButton img {
+    display: none;
+}
+
+#menuClassNameTag {
+    display: none;
+}
+
+#classPreviewCanvas {
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    margin: 0;
+    transform: translateX(25%);
+    opacity: 0;
+    transition-duration: 0.25s;
+}
+
+#bubbleContainer {
+    display: none;
+}
+
+#menuClassContainer:hover #classPreviewCanvas {
+    opacity: 1;
+}
+
+#menuClassName, #menuClassSubtext {
+    display: none;
+}
+
+.loadoutBtn {
+    border-radius: 0;
+}
+
+#selectorContainer {
+    display: flex;
+    height: auto;
+    width: -webkit-fill-available;
+    justify-content: space-between;
+    filter: none;
+    background-color: #fff;
+    z-index: 2;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.selectorItem {
+    left: 0;
+    transform: unset;
+    background-color: transparent !important;
+    filter: none !important;
+}
+
+#customizeContainer {
+    float: unset;
+    width: 100%;
+}
+
+.selectorItem {
+    margin: 0;
+    left: 0;
+    transform: unset;
+    background-color: transparent !important;
+    filter: none !important;
+}
+
+.selectorItem .selectorIcon {
+    filter: drop-shadow(0px 0px 0px #000);
+}
+
+.selectorLabel {
+    text-shadow: none;
+    color: rgba(0,0,0,0.5);
+}
+
+.classCard {
+    text-shadow: none;
+    background-color: transparent;
+    filter: none;
+    width: calc(50% - 32px);
+    height: 280px;
+    margin-right: 6px;
+}
+
+.classXPBar {
+    background-color: var(--accent);
+    width: calc(100% - 14px);
+    height: 24px;
+    top: unset;
+    bottom: 12px;
+    border-radius: 0;
+    transform: skewX(-16deg);
+}
+
+.clsXPBarC {
+    margin: 0;
+    height: 24px;
+    background-color: var(--shadow);
+}
+
+.classLvl {
+    top: unset;
+    bottom: 12px;
+    right: 12px;
+    color: var(--accent-text) !important;
+}
+
+.classWeap, .classHP {
+    opacity: 0;
+}
+
+#itemSearchH {
+    background-color: transparent;
+}
+
+
+/*Menu Window*/
+
+#windowHolder {
+    content: " ";
+    position: fixed;
+    display: block !important;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--menu-bg) !important;
+    z-index: 4 !important;
+    transition: 0.25s ease-in-out;
+    opacity: 0;
+    pointer-events: all;
+}
+
+#windowHolder::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    background-color: var(--secondary);
+    height: 200px;
+    width: 1600px;
+    bottom: 0;
+    clip-path: polygon(0 0, 0% 100%, calc(100% - 420px) 100%);
+}
+
+#windowHolder[style*="display: block;"] {
+    position: fixed;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    z-index: 4 !important;
+    animation: menuWindow 0.5s;
+    opacity: 1;
+}
+
+#windowHolder[style*="display: none;"] {
+    height: 0%;
+    bottom: 0;
+}
+
+#windowHolder[style*="display: none;"] * {
+    pointer-events: none;
+}
+
+#windowHeader {
+    display: block;
+    position: fixed;
+    bottom: 108px;
+    left: 20px;
+    margin: 0;
+    color: var(--secondary-text);
+    font-size: 64px;
+    transform: rotate(9.625deg);
+    transform-origin: bottom left;
+    line-height: 64px;
+}
+
+#menuWindow {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0px;
+    top: 50% !important;
+}
+
+#menuWindow::-webkit-scrollbar {
+    display: none;
+}
+
+#menuWindow.dark div {
+    color: var(--menu-text);
+}
+
+.setHed {
+    color: var(--accent-text) !important;
+    background-color: var(--accent);
+    border: none;
+    font-size: 32px;
+    padding: 12px;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.setHed:hover {
+    background-color: var(--accent);
+    background-image: linear-gradient(var(--shadow), var(--shadow));
+}
+
+.setBodH {
+    padding: 0;
+    margin: 0;
+    width: -webkit-fill-available;
+    background-color: transparent;
+}
+
+.settName, .settNameSmall {
+    color: var(--accent) !important;
+}
+
+.settName, .settNameSmall {
+    color: var(--menu-text) !important;
+    padding: 0;
+    margin: 8px 0px;
+    font-size: 32px;
+}
+
+.pSt {
+    color: var(--menu-text);
+    text-shadow: none !important;
+    font-size: 32px;
+    width: -webkit-fill-available;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.pSt strong {
+    color: var(--accent);
+    font-size: 32px;
+    float: right;
+}
+
+
+.floatR {
+    color: var(--accent) !important;
+}
+
+#menuWindow span[style*="255,255,255"] {
+    color: var(--menu-text) !important;
+}
+
+#menuWindow .floatR[style*="255,255,255"] {
+    color: var(--accent) !important;
+}
+
+#menuWindow .floatR span[style*="255,255,255"] {
+    color: var(--accent) !important;
+}
+
+.bigMenTabs {
+    border-radius: 0;
+    background-color: var(--accent);
+}
+
+.bigMenTab {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.bigMenTab[style*="16px"] {
+    font-size: 28px !important;
+}
+
+.xpBar {
+    background-color: transparent;
+}
+
+.xpBarB {
+    display: none;
+}
+
+.xpBarV {
+    top: 0;
+    color: var(--accent);
+    font-size: 32px;
+    text-align: right;
+    text-shadow: none;
+}
+
+.xpBarV::before {
+    content: "PROGRESS";
+    float: left;
+}
+
+.bigMenTab {
+    color: var(--accent-text) !important;
+    line-height: unset;
+}
+
+.bigMenTab[onclick*="windows[4]"] {
+    font-size: 0 !important;
+}
+
+.bigMenTab[onclick*="windows[4]"]::before {
+    font-size: 40px;
+    font-family: 'Material Icons';
+}
+
+.bigMenTab[onclick*="windows[4].switchTab(1)"]::before {
+    content: "group";
+}
+
+.bigMenTab[onclick*="windows[4].switchTab(2)"]::before {
+    content: "verified";
+}
+
+.bigMenTab[onclick*="windows[4].switchTab(3)"]::before {
+    content: "settings";
+}
+
+.bigMenTab[onclick*="windows[4].switchTab(4)"]::before {
+    content: "link";
+}
+
+/*Account*/
+
+.setBodH div[style*="255,255,255"] {
+    color: var(--menu-text) !important;
+}
+
+.setBodH div[style*="255,255,255"] span[style*="#fff"] {
+    color: var(--accent) !important;
+}
+
+#twoFAemil::placeholder, #repNPass::placeholder, #newPass::placeholder, #oldPass::placeholder {
+    color: var(--accent);
+}
+
+.setHedS {
+    border: none;
+    background-color: var(--accent);
+    color: var(--accent-text) !important;
+}
+
+.subPassChg {
+    background-color: var(--accent);
+    color: var(--accent-text) !important;
+    border-radius: 0;
+}
+
+.menuLink {
+    font-size: 24px;
+}
+
+.accountInput {
+    color: var(--accent);
+}
+
+.accountInput::placeholder {
+    color: var(--menu-text);
+}
+
+.accBtn {
+    background-color: transparent;
+    border: none !important;
+}
+
+.accBtn:hover {
+    border: none !important;
+}
+
+/*Challenges*/
+
+.chalCard {
+    background-color: transparent;
+    text-shadow: none;
+}
+
+.chalImgC {
+    background-color: var(--shadow);
+    background-image: linear-gradient(var(--shadow), var(--shadow));
+    border-radius: 50%;
+    width: 96px;
+    padding: 8px;
+    border: none;
+}
+
+.chalRight {
+    color: var(--accent) !important;
+    font-size: 32px;
+}
+
+.chalDesc {
+    font-size: 24px;
+    margin-top: 8px;
+}
+
+.chalXPBar {
+    background-color: transparent;
+}
+
+.chalXPBarC {
+    display: none;
+}
+
+.chalProg {
+    font-size: 24px;
+    text-align: left;
+    color: var(--accent) !important;
+}
+
+/*Maps*/
+
+.hostHeader {
+    color: var(--accent-text) !important;
+    background-color: var(--accent);
+    border: none;
+}
+
+.mapListCat {
+    color: var(--accent-text) !important;
+    background-image: none;
+    background-color: var(--accent);
+}
+
+.hostMap {
+    width: 220px;
+    border: none;
+}
+
+
+.hostMapBy, .hostMapYear, .hostMapVersion {
+    display: none;
+}
+
+.hostMapName {
+    top: 50%;
+    left: 50%;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #fff !important;
+}
+
+.hostMapImg {
+    filter: grayscale(100%) brightness(0.75);
+    border-radius: 8px;
+    width: 231px;
+}
+
+.hostMap .blackShad {
+    text-shadow: none;
+}
+
+.hostOpt {
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    width: 210px;
+}
+
+.optCheck {
+    background-color: transparent !important;
+}
+
+.optName {
+    text-shadow: none;
+    color: var(--accent);
+    font-size: 20px;
+}
+
+input:checked+.optCheck::after {
+    content: "task_alt";
+    font-size: 24px;
+    color: var(--accent);
+    display: block;
+    font-family: 'Material Icons';
+    text-align: right;
+    font-weight: bold;
+}
+
+.optImg {
+    display: none;
+}
+
+.hostToggle, .advancedToggle {
+    background-color: transparent !important;
+    font-size: 24px;
+    color: var(--accent-text) !important;
+}
+
+.formInput {
+    border-radius: 0;
+}
+
+#presetSelect, #loadoutSelect {
+    position: relative;
+    top: -5px;
+    border-radius: 0 !important;
+}
+
+.hostCBtn {
+    color: var(--accent-text) !important;
+    background-color: var(--accent);
+}
+
+.serverHostOp {
+    color: #fff !important;
+}
+
+/*Servers*/
+
+.quickJoin {
+    border: none;
+    font-size: 24px;
+    margin-top: 0;
+    color: var(--accent-text) !important;
+}
+
+#menuWindow .setHed span[style*="255,255,255"] {
+    color: var(--accent-text) !important;
+}
+
+.slide {
+    border: none;
+    margin-right: 8px;
+}
+
+#carousel-infinite {
+    height: 140px;
+}
+
+.purejscarousel-btn {
+    background-color: transparent !important;
+}
+
+.purejscarousel-btn .plusOrMinus2 {
+    background-color: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+}
+
+.slideName, .slidePlayers {
+    color: #fff !important;
+    text-shadow: none;
+}
+
+#hostMenuBtn {
+    background-color: transparent;
+}
+
+#hostMenuBtn .material-icons {
+    color: var(--accent) !important;
+}
+
+#hideFull span {
+    color: var(--accent) !important;
+}
+
+#serverSearch::placeholder {
+    color: var(--menu-text);
+}
+
+#serverSearch {
+    background-color: transparent;
+    border: none;
+    color: var(--accent);
+}
+
+.serverHeader .setBodH {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Settings*/
+
+.settingsHeader, .serverHeader {
+    background-color: var(--menu-bg);
+}
+
+#settingsTabLayout {
+    background-color: var(--accent);
+    border-radius: 0;
+}
+
+.settingTab {
+    background-color: transparent;
+    color: var(--accent-text) !important;
+    font-size: 0;
+}
+
+.settingTab::before {
+    font-family: 'Material Icons';
+    font-size: 32px;
+}
+
+.settingTab:nth-child(1):before {
+    content: "tune";
+}
+
+.settingTab:nth-child(2):before {
+    content: "gamepad";
+}
+
+.settingTab:nth-child(3):before {
+    content: "devices";
+}
+
+.settingTab:nth-child(4):before {
+    content: "video_camera_back";
+}
+
+.settingTab:nth-child(5):before {
+    content: "sports_esports";
+}
+
+.settingTab:nth-child(6):before {
+    content: "volume_up";
+}
+
+.settingTab:nth-child(7):before {
+    content: "add_circle";
+}
+
+.settingTab:nth-child(8):before {
+    content: "add_circle";
+}
+
+.setSugBox {
+    display: none;
+}
+
+.settingsBtn, .loadoutBtn, .hostPresetBtn {
+    background-color: var(--accent);
+    color: var(--accent-text) !important;
+    border-radius: 0 !important;
+}
+
+.sliderM {
+    height: 8px;
+    background-color: var(--accent);
+}
+
+.sliderM::-webkit-slider-thumb {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: var(--menu-bg);
+    border: 6px solid var(--accent);
+}
+
+.sliderVal {
+    background-color: var(--accent);
+    border-radius: 0;
+    border: none !important;
+    line-height: 28px;
+    font-size: 20px;
+}
+
+.switch {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.slider {
+    background-color: transparent;
+}
+
+input:checked+.slider {
+    background-color: transparent;
+}
+
+input:checked+.slider::before {
+    background-color: transparent;
+    transform: unset;
+    content: "task_alt";
+    color: var(--accent);
+}
+
+.slider::before {
+    background-color: transparent;
+    transform: unset;
+    left: 0;
+    top: 0;
+    font-size: 32px;
+    height: 32px;
+    width: 32px;
+    color: var(--menu-text);
+    content: "block";
+    font-family: 'Material Icons';
+    transition-duration: 0.25s;
+    font-weight: bold;
+}
+
+/*Terms*/
+
+#infoHolder>* {
+    z-index: 1;
+}
+
+#mapInfo {
+    display: none;
+}
+
+#termsInfo {
+    background-color: transparent;
+}
+
+#uiBase.onMenu #termsInfo {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    padding: 0;
+}
+
+.verticalSeparatorInline {
+    height: 16px;
+    transform: unset;
+    border-color: var(--accent);
+}
+
+#LaFWaterMark {
+    display: none;
+}
+
+#menuTimer {
+    display: none;
+}
+
+
+/*Section IV: HUD*/
+
+#bottomLeftHolder::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    background-color: var(--accent);
+    height: 200px;
+    width: 380px;
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(0 0, 0% 100%, 100%100%);
+}
+
+#hudClassIcon {
+    display: none;
+}
+
+.healthBarSeg {
+    margin-right: -1px;
+    width: -webkit-fill-available;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.hpBSeg {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#healthValueHolder {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    z-index: 4;
+}
+
+#healthValue {
+    font-size: 128px;
+    font-family: logotype;
+    line-height: 100px;
+}
+
+#healthValue, #ammoVal {
+    text-shadow: 8px 8px var(--hud-shadow);
+}
+
+
+#healthValue::after {
+    content: "HP";
+    font-size: 32px;
+    line-height: 0;
+    position: relative;
+    left: -28px;
+}
+
+#maxHP {
+    display: none;
+}
+
+#challIcon {
+    display: none;
+}
+
+/*Ammo Display*/
+
+#bottomRight {
+    bottom: 0;
+}
+
+#bottomRight::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    background-color: #000;
+    height: 200px;
+    width: 380px;
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+#ammoDisplay {
+    position: fixed;
+    top: calc(50% + 48px);
+    left: calc(50% - 40px);
+    transform: unset;
+    width: 80px;
+    padding: 0;
+    height: 8px;
+    background-image: linear-gradient(var(--accent), var(--accent));
+}
+
+#ammoDisplay[style*="background-size: 0%"] {
+    background-color: transparent;
+}
+
+#ammoVal {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    font-size: 128px;
+    line-height: 100px;
+    font-family: logotype;
+}
+
+#ammoMax, #ammoIcon {
+    display: none;
+}
+
+/*Weapon Display*/
+
+#weapDisplay {
+    z-index: 3;
+}
+
+.weapIcon {
+    height: 64px;
+    width: 128px;
+    margin: 0 !important;
+    transition-duration: 0.25s;
+}
+
+.weapIcon[style*="1"] {
+    position: fixed;
+    right: 360px;
+    bottom: 0;
+}
+
+.weapIcon[style*="7"] {
+    position: fixed;
+    bottom: 0;
+    right: -128px;
+}
+
+.weapKey {
+    display: none;
+}
+
+/*Reload*/
+
+#reloadMsg {
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    padding: 0;
+    line-height: unset;
+    bottom: calc(50% - 128px);
+}
+
+#reloadMsg::before {
+    content: "cached";
+    font-size: 64px;
+    font-family: "Material Icons";
+    color: var(--accent);
+}
+
+/*Top Left*/
+
+#timerDisplay {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    filter: drop-shadow(4px 4px var(--hud-shadow));
+}
+
+#timerIcon {
+    display: none;
+}
+
+#timerVal {
+    color: var(--hud-text);
+    font-size: 40px;
+    padding: 0;
+    font-family: logotype;
+}
+
+#timerVal::before {
+    content: "timer ";
+    font-family: 'Material Icons';
+    font-size: 28px;
+    -webkit-text-stroke: 1px;
+    position: absolute;
+    left: calc(50% - 14px);
+    bottom: -28px;
+}
+
+#timerDisplay::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 50%;
+    border-bottom: 4px solid var(--accent);
+    bottom: -16px;
+    right: calc(50% + 24px);
+}
+
+#timerDisplay::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 50%;
+    border-bottom: 4px solid var(--accent);
+    bottom: -16px;
+    left: calc(50% + 24px);
+}
+
+#roundsDisplay {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    position: fixed;
+    left: 50%;
+    top: 108px;
+    transform: translateX(-50%);
+}
+
+#roundsVal {
+    color: var(--accent-text);
+    font-size: 24px;
+}
+
+#roundSub {
+    font-size: 16px;
+}
+
+#gameMessage {
+	top: 120px;
+	font-size: 18px;
+}
+
+#ingameFPS, #pingIcon {
+    color: var(--accent) !important;
+}
+
+#pingDisplay .material-icons, #ingressDisplay .material-icons, #egressDisplay .material-icons {
+    font-size: 24px !important;
+}
+
+#teamScores[style="display: inline-block;"] {
+    display: inline-flex !important;
+    flex-direction: row;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+}
+
+#teamScores {
+    background-color: transparent;
+}
+
+.tScore:first-child {
+    margin-right: 16px;
+    direction: rtl;
+}
+
+.tScore:last-child {
+    margin-left: 16px;
+}
+
+.tScoreC {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.tScore:first-child .tScoreC {
+    margin-right: 0;
+    margin-left: 16px;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.tScoreT {
+    color: var(--hud-text);
+    font-size: 40px;
+    display: inline-block;
+    font-family: logotype;
+    text-shadow: 4px 4px var(--hud-shadow);
+}
+
+/*Top Right*/
+
+#leaderDisplay {
+    background-color: var(--hud-bg);
+    border-radius: 0;
+}
+
+.leaderItem {
+    font-size: 24px;
+    line-height: 32px;
+    text-shadow: 2px 4px var(--hud-shadow);
+}
+
+.leaderName, .newLeaderName, .newLeaderNameF, .endTableN[style*="color:#eb5656"] {
+    color: var(--accent) !important;
+}
+
+.countIcon {
+    background-color: transparent;
+    font-size: 28px;
+    filter: drop-shadow(2px 4px var(--hud-shadow));
+}
+
+#igXPBar {
+    display: none !important;
+}
+
+#matchVoteHolder {
+    background-color: transparent;
+}
+
+.endCard {
+    background-color: var(--menu-bg);
+    border-radius: 0;
+    padding: 0;
+}
+
+.tabBody {
+    padding: 20px;
+}
+
+#tabHolder {
+    background-color: var(--secondary);
+    border-radius: 0;
+}
+
+.tabHeader {
+    color: var(--accent-text);
+    font-size: 24px;
+    opacity: 0.5;
+    transition-duration: 0.12s;
+    padding: 12px;
+}
+
+.tabHeader.selected {
+    color: var(--accent-text);
+    opacity: 1;
+    background-color: var(--accent);
+    border: none;
+}
+
+.tabHeader:hover {
+    border: none;
+    opacity: 0.75;
+}
+
+#endTable {
+    background-color: transparent;
+}
+
+.endTableN[style*="#fff"]::before {
+    content: "・";
+    display: inline-block;
+    color: var(--accent);
+}
+
+.endTableN[style*="#fff"] {
+    color: var(--menu-text) !important;
+}
+
+.leaderNameF, .newLeaderNameF, .endTableN[style*="color:rgba(255,255,255,0.6)"] {
+    color: var(--menu-text) !important;
+}
+
+th {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 28px;
+}
+
+td {
+    color: var(--accent) !important;
+}
+
+.gfSection, .endSection {
+    background-color: transparent;
+}
+
+.endTitle {
+    color: var(--accent);
+    font-size: 24px;
+}
+
+.fundsVal {
+    color: var(--menu-text);
+}
+
+.crLabel, .crVal {
+    color: var(--menu-text);
+    font-size: 28px;
+}
+
+.modeIcon {
+    opacity: 0;
+}
+
+#lvlLayout {
+    grid-template-columns: unset;
+}
+
+.xpEndBar {
+    background-color: #000;
+    border-radius: 0;
+    height: 32px;
+}
+
+.xpEndBarB {
+    display: none;
+}
+
+.xpEndBarV {
+    text-shadow: none;
+    color: #fff;
+    font-size: 32px;
+    top: 0;
+    right: 20px;
+    left: 19px;
+    text-align: right;
+}
+
+/*Section V: Spectate UI*/
+
+#uiBase.onMenu #spectateUI {
+    display: block !important;
+}
+
+#uiBase.onMenu #spectateHUD {
+    position: fixed;
+    top: 20px;
+    transform: unset;
+    z-index: 11;
+}
+
+#uiBase.onMenu #specGMessage {
+    display: none;
+}
+
+#uiBase.onMenu #specKPDContr {
+    display: none;
+}
+
+#specContr {
+    display: none;
+}
+
+#uiBase.onMenu #spec0, #uiBase.onMenu #spec1 {
+    display: none !important;
+}
+
+#uiBase.onMenu #specTeam0, #uiBase.onMenu #specTeam1 {
+    display: none;
+}
+
+#specNames {
+    display: none !important;
+}
+
+#spectateHUD::before {
+    content: " ";
+    position: fixed;
+    width: 320px;
+    height: 200px;
+    background-color: var(--menu-bg);
+    top: 0;
+    right: 0;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+}
+
+#uiBase.onSpect #spectateHUD::before {
+    top: -20px;
+}
+
+#specTimer {
+    background-color: transparent;
+    position: fixed;
+    top: 16px;
+    right: 108px;
+    min-width: unset;
+    padding: 0;
+    color: var(--accent);
+    transform: rotate(32deg) translateX(50%);
+    font-size: 48px;
+}
+
+#uiBase.onSpect #specTimer {
+    top: -4px;
+}
+
+#specTimer::before {
+    content: "timer ";
+    font-family: 'Material Icons';
+    font-size: 28px;
+    -webkit-text-stroke: 1px;
+}
+
+#uiBase.onMenu #specGameInfo {
+    position: fixed;
+    left: 20px;
+    top: 56px;
+    color: rgba(255,255,255,0.25);
+}
+
+#spectateHUD {
+    text-shadow: none;
+}
+
+#uiBase.onSpect #leaderDisplay {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
