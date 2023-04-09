@@ -1,0 +1,215 @@
+
+:root {
+	
+/* edit these to change the css's color theme
+	(leave the CC and 99 on the end of the hex code, it is the transparency :D) 
+		     vvvvvvv      */
+	--off-white: #A5FFFFCC;
+	--col2: #A5FFFF99;
+}
+
+
+
+/* 
+
+
+Krunker Speedrunner Css by Scuff
+
+
+
+*/
+
+
+
+
+
+/*delete*/
+#healthBar,
+#healthValueHolder,
+#ammoDisplay,
+#hudClassImg,
+#hudClassIcon,
+#voiceDisplay,
+#speedRunReset,
+.newLeaderScore,
+.newLeaderCounter,
+#timerIcon,
+#timerDisplay,
+#speedRunInfo,
+.topRightCounters,
+#leaderDisplay,
+#chatSwitch::after,
+#pingDisplay .material-icons
+
+{
+
+display:none !important;
+padding:0;
+}
+
+/*verif premium color*/
+
+.newLeaderContainer i[style*="color:#FBC02D"] {
+	color: var(--off-white) !important;
+}
+
+.newLeaderContainer i[style*="color:#40C4FF"] {
+	color: var(--off-white) !important;
+}
+
+/*text shadow*/
+
+#newLeaderDisplay,
+#speedRunTimer,
+#speedRunBox,
+#chatList,
+#chatInput,
+#curGameInfo
+{
+	
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* VIS */
+
+.debugInfo {
+    color: rgba(255,255,255,0.4) !important
+}
+
+#fpsDisplay{
+    visibility:hidden;
+}
+#ingameFPS {
+    visibility:visible !important;
+    color:rgb(153 215 150 / 80%) !important;
+}
+
+#pingDisplay {
+    color: rgba(255,255,255,0.6) !important;
+}
+
+/*left
+
+
+*/
+
+
+
+
+#curGameInfo {
+	
+	position:fixed;
+    bottom:350px;
+    left:25px;
+	padding-bottom:13px;
+    border-bottom:solid 2px var(--off-white);
+	color:var(--off-white) !important;
+}
+
+#newLeaderDisplay {
+	background-color:rgba(0,0,0,0.00);
+	padding:0;
+	
+}
+
+.newLeaderNameM {
+	
+	color: var(--off-white) !important;
+}
+
+/*right
+
+
+*/
+
+#speedRunTimer {
+	
+position:fixed;
+bottom:300px;
+right:10px;
+font-size:40px;
+	color:var(--off-white);
+}
+
+#speedRunBox {
+	font-size: 50px;
+    padding:0;
+	position:fixed;
+    bottom:10px;
+    right:10px;
+	width:280px;
+	background-color:rgba(0,0,0,0.00);
+}
+
+.sriAct {
+    background-color: #00000026;
+}
+
+.speedRunItem {
+	border-bottom:0;
+	text-transform: lowercase;
+	font-size:18px;
+}
+
+.speedRunITim {
+font-size:15px;
+}
+
+#speedRunList {
+    border-top:solid 2px var(--off-white);
+}
+
+.newLeaderContainer {
+    background-color: rgb(0,0,0,0) !important;
+    padding:0 !important;
+    content-align:center;
+    
+}
+
+#ingameTable tbody tr th {
+    display:none !important;
+}
+
+/*chat*/
+
+#chatInputHolder, #chatList {
+    background-color:rgba(0,0,0,0);
+    border:none;
+    padding:0;
+}
+
+#chatInput {
+
+    background-color:#00000026;
+    border:0;
+    position:fixed;
+    left:8px;
+    bottom:10px;
+}
+
+#chatList {
+    position:relative;
+    right:12px;
+    top:115px
+}
+
+
+*::-webkit-scrollbar-track {
+    display: none !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.05) !important;
+    border-radius:0px;
+    
+}
+
+#chatInput::placeholder {
+    text-transform: lowercase;
+}
+
+
+.chatMsg[style*="color:#fc03ec"] {
+    color: var(--col2) !important;
+    text-shadow:0 0 0 rgba(0,0,0,0.1) !important;
+}
