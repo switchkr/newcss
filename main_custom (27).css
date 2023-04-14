@@ -1,0 +1,18 @@
+.leaderNameM, .leaderNameM span { font-size: 0 }
+.leaderNameM::before {
+    content: "xXKebabmuncher323Xx";
+    font-size: 18px;
+    color: white;
+}
+
+#menuAccountUsername{ font-size: 0px; }
+#menuAccountUsername::before {
+    content: "XKebabmuncher323Xx";
+    font-size: 18px;
+}
+    
+.menuClassPlayerName{ font-size: 0px; }
+.menuClassPlayerName::before {
+    content: "XKebabmuncher323Xx";
+    font-size: 18px;
+}
