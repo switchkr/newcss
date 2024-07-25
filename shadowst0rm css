@@ -1,0 +1,242 @@
+:root {
+    --profilePicture: "https://preview.redd.it/xxaz8vybagt61.png?width=460&format=png&auto=webp&s=6e1ac739ab49824b7b80c71cdc5469d136b2c373";
+    --clickToPlayText: "lock in";
+    --gameInfoColor: #fff;
+    --healthTextColor: #fff;
+    --debugColor: #fff;
+    --buttonColor: #ffffff;
+    --usernameColor: rgb(0, 0, 0);
+    --healthBarColor: #000;
+
+}
+
+#uiBase {
+    height: 125% !important;
+    width: 80% !important;
+    transform: scale(1.25, 0.8) !important;
+}
+
+.weapItem, .weapItemInner, #ammoHolder, .greyInner, #leaderContainer, #leaderboardHolder, .statIcon, .killStreakItem, .killStreakItemInner, #timerInner, #timerHolder, #teamScores, .nHealthBarSeg, #bottomLeftPlayerRight, #bottomLeftPlayerLeft, #bottomLeftPlayer, #chatInputHolder, .greyInlineInnerMid {
+    background: 0 !important;
+}
+
+#headerRight, .weapKey, .weapSkin, #ammoMax, #ammoIcon, #timerIcon, #bottomLeftChallIcon, #bottomLeftTeamName, #bottomLeftTeamType, #endAHolder, #streamContainer, #topRightAdHolder, #seasonLabel, #topRightAdHolder, #tlInfHold, #aHider, #policeButton, #mapInfoHld, #spectButton > span, #customizeButton > span, #infoHolder, #bubbleContainer, .menuItemTitle, #gameNameHolder, .endAHolder {
+    display: none !important;
+}
+
+.greyInner #ammoVal, .weapItemInner, .statIcon, #leaderContainer, .killStreakItemInner {
+    padding: 0px;
+    /* margin: 0px; looks shit most of the time */
+}
+
+#timerInner, #matchInfo.topLeftOld {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+#matchInfo.topLeftOld {
+    content: "";
+    font-size: 0px !important;
+}
+
+#matchInfo::after {
+    content: var(--gameInfoText);
+    font-size: 17px !important;
+    color: var(--gameInfoColor);
+}
+
+#fpsDisplay {
+    visibility:hidden;
+}
+
+#ingameFPS {
+    visibility: visible;
+    color: var(--debugColor) !important;
+}
+
+#pingDisplay {
+    visibility: hidden;
+}
+
+#pingText {
+    visibility: visible;
+    color: var(--debugColor) !important;
+}
+
+#bottomLeftPlayerLeft {
+    width: 100px;
+    height: 100px;
+}
+
+#bottomLeftClassImg {
+    content: var(--profilePicture) !important;
+}
+
+.nHpBSeg { 
+    border-radius: 0px;
+    background: var(--healthBarColor) !important; 
+}
+
+.nHealthBarSeg { margin-left: -1px; height: 34px; }
+
+#bottomLeftHealthBar {
+    background: 0px rgba(0, 0, 0, 0.2);
+    column-gap: 0px;
+    padding: 0;
+}
+
+#bottomLeftPlayerMid {
+    position: relative;
+    top: 30px;
+    left: 12px;
+}
+
+#bottomLeftHealth {
+    font-size: 25px;
+    color: var(--healthTextColor);
+    position: relative;
+    bottom: 22px;
+    right: 295px;
+}
+
+.greyInlineInner {
+    display: none;
+}
+
+.greyInlineInnerMid {
+    margin: 0px;
+    padding: 0px;
+}
+
+#chatInputHolder {
+    grid-template-columns: auto;
+}
+
+#chatList {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 0px;
+    padding-left: 5px;
+}
+
+#chatInput {
+    background: rgba(0, 0, 0, 0.275);
+    border: 2px solid transparent;
+    width: 100%;
+    border-radius: 0px;
+}
+
+#bottomLeftPlayer {
+    grid-template-columns: auto 294px auto;
+}
+
+.debugInfo {
+    position: fixed;
+    left: 156px;
+    top: 18px;
+    text-align: left;
+}
+
+.button, .button:hover {
+    border: 0 !important;
+    color: var(--buttonColor) !important;
+}
+
+.menBtnIcn, .menuItem:hover > .menBtnIcn {
+    color: var(--buttonColor) !important;
+}
+
+#instructions {
+    content: "";
+    font-size: 0px !important;
+}
+
+#instructions::after {
+    content: var(--clickToPlayText);
+    font-size: 32px !important;
+}
+
+#menuClassIcn, #menuClassName, #menuClassSubtext {
+    visibility: hidden;
+}
+
+#classPreviewCanvas {
+    position: relative;
+    left: 20px;
+}
+
+#menuClassNameTag {
+    display: block;
+    width: 100%;
+    text-align: center;
+    left: 65px;
+}
+
+.button, .menuItem {
+    backdrop-filter: blur(3.3px);
+    -webkit-backdrop-filter: blur(3.3px);
+}
+
+#menuBtnHost {
+    content: "";
+    font-size: 0px !important;
+}
+
+#menuBtnHost::after {
+    content: "host";
+    font-size: 24px;
+}
+
+#menuBtnBrowser {
+    content: "";
+    font-size: 0px !important;
+}
+
+#menuBtnBrowser::after {
+    content: "servers";
+    font-size: 24px;
+}
+
+#inviteButton {
+    content: "";
+    font-size: 0px !important;
+}
+
+#inviteButton::after {
+    content: "invite";
+    font-size: 24px;
+}
+
+#menuBtnJoin {
+    content: "";
+    font-size: 0px !important;
+}
+
+#menuBtnJoin::after {
+    content: "join";
+    font-size: 24px;
+}
+
+#customizeButton {
+    content: "";
+    font-size: 0px !important;
+    text-shadow: none !important;
+}
+
+#customizeButton::after {
+    content: "change";
+    font-size: 24px;
+}
+
+#signedOutHeaderBar > div, #signedOutHeaderBar > div > span {
+    content: "";
+    font-size: 0px !important;
+}
+
+#signedOutHeaderBar > div::after {
+    content: "account";
+    font-size: 20px !important;
+}
+
+.menuItemTitle {
+    display: none;
+}
